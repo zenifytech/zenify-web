@@ -1,0 +1,121 @@
+@import 'variables.scss';
+
+@mixin page-padding() {
+    padding: $zen-page-padding;
+
+    @media only screen and (max-width: 1024px) {
+        padding: $zen-page-padding-mobile;
+    }
+}
+
+@mixin hero-padding() {
+    padding: $zen-hero-padding;
+
+    @media only screen and (max-width: 1024px) {
+        padding: $zen-hero-padding-mobile;
+    }
+}
+
+@mixin position($position, $top: undefined, $right: undefined, $bottom: undefined, $left: undefined) {
+    position: $position;
+
+    @if $top != undefined {
+        top: $top;
+    }
+    @if $right != undefined {
+        right: $right;
+    }
+    @if $bottom != undefined {
+        bottom: $bottom;
+    }
+    @if $left != undefined {
+        left: $left;
+    }
+}
+
+@mixin position-xy($position, $x: undefined, $y: undefined) {
+    position: $position;
+
+    @if $x != undefined {
+        right: $x;
+        left: $x;
+    }
+    @if $y != undefined {
+        top: $y;
+        bottom: $y;
+    }
+}
+
+@mixin object($fit: cover, $position: center) {
+    object-fit: $fit;
+    object-position: $position;
+}
+
+
+@mixin link($color) {
+    color: $color;
+    text-decoration: none;
+}
+
+@mixin active {
+    &:not([disabled]),
+    &:not([disabled]):active {
+      @content;
+    }
+}
+
+@mixin hover-focus {
+    &:not([disabled]):hover,
+    &:not([disabled]):focus {
+      @content;
+    }
+}
+
+@mixin solid-button($background, $color, $hover-background, $hover-color) {
+    @include active {
+        background-color: $background;
+        color: $color;
+    }
+    @include hover-focus {
+        background-color: $hover-background;
+        color: $hover-color;
+    }
+}
+
+@mixin outline-button($color, $hover-color) {
+    @include active {
+        background-color: transparent;
+        border: thin solid $color;
+        color: $color;
+    }
+    @include hover-focus {
+        border: thin solid $hover-color;
+        color: $hover-color;
+    }
+}
+
+@mixin outline-solid-button($color, $hover-background, $hover-color) {
+    @include active {
+        background-color: transparent;
+        border: thin solid $color;
+        color: $color;
+    }
+    @include hover-focus {
+        background-color: $hover-background;
+        border: thin solid $hover-background;
+        color: $hover-color;
+    }
+}
+
+@mixin solid-outline-button($background, $color, $hover-color) {
+    @include active {
+        background-color: $background;
+        border: thin solid $background;
+        color: $color;
+    }
+    @include hover-focus {
+        background-color: transparent;
+        border: thin solid $hover-color;
+        color: $hover-color;
+    }
+}

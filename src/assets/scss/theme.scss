@@ -1,0 +1,13 @@
+@import 'mixins.scss';
+
+.row {
+    @media screen and (max-width: 768px) {
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: $zen-palette-1;
+}

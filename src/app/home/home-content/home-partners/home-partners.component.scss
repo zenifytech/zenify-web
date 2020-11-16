@@ -1,0 +1,17 @@
+@import 'src/assets/scss/mixins.scss';
+
+#zen-partners {
+    @include page-padding;
+    background: $off-white;
+    text-align: center;
+    padding-bottom: 5rem;
+}
+
+.zen-partners-label {
+    padding: 2.5rem 0;
+    color: $zen-palette-3;
+}
+
+#zen-partners img {
+    max-width: 10em;
+}

@@ -1,0 +1,81 @@
+@import 'src/assets/scss/mixins.scss';
+
+div#zen-home-footer-container {
+    min-height: 10em;
+}
+
+img.zen-footer-logo {
+    content: url('src/assets/images/logo/zenify-icon.webp');
+    min-width: 5em;
+    max-width: inherit;
+
+    @media only screen and (max-width: 600px) {
+        width: 5em;
+    }
+}
+
+div.zen-home-footer-links {
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+        width: 100%;
+        padding: $zen-page-padding-mobile;
+    }
+}
+
+a.zen-footer-link {
+    @include active {
+        @include link($white);
+        font-family: $zen-font-regular;
+        font-size: small;
+        margin: 0 1em;
+        padding-left: 0.5em;
+        @media screen and (max-width: 768px) {
+            margin: 0 0.5em;
+        }
+    }
+
+    @include hover-focus {
+        @include link($zen-palette-2);
+        border-left: thin solid $zen-palette-2;
+    }
+
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+    }
+}
+
+#zen-footer-about {
+    margin: 0 auto;
+    width: 40%;
+
+    @media only screen and (max-width: 1024px) {
+        width: 100%;
+    }
+}
+
+.zen-footer-title {
+    font-family: $zen-font-regular;
+    font-size: small;
+    color: $white;
+    border-left: medium solid $zen-palette-2;
+    padding-left: $zen-header-text-padding;
+    margin-bottom: 1rem;
+
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+        margin-top: 1rem;
+        border-left: none;
+        padding-left: 0;
+    }
+}
+
+.zen-footer-text {
+    font-family: $zen-font-light;
+    font-size: small;
+    color: #cccccc;
+
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,70 @@
+@import 'src/assets/scss/mixins.scss';
+
+#zen-home-header-container {
+    width: 100%;
+}
+
+img#zen-header-logo {
+    content: url('src/assets/images/logo/zenify-logo.webp');
+    position: absolute;
+    width: 15em;
+    @media screen and (max-width: 600px) {
+        width: 10.5em;
+    }
+}
+
+div#zen-header-menu section {
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+}
+
+div#zen-header-menu .zen-header-menu-toggle {
+    color: $zen-palette-1;
+    display: none;
+    @media screen and (max-width: 600px) {
+        display: block;
+    }
+}
+
+a.zen-header-menu,
+.zen-header-location {
+    @include active {
+        @include link($zen-palette-1);
+        font-family: $zen-font-regular;
+        letter-spacing: $letter-spacing-s;
+        margin: 0 1em;
+        padding-bottom: 0.5em;
+        @media screen and (max-width: 768px) {
+            margin: 0 0.5em;
+        }
+    }
+
+    @include hover-focus {
+        @include link($zen-palette-2);
+    }
+}
+
+a.zen-header-menu {
+    @include hover-focus {
+        border-bottom: thin solid $zen-palette-2;
+    }
+}
+
+.zen-header-location {
+    @media screen and (min-width: 768px) {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+    @media screen and (max-width: 768px) {
+        mat-icon {
+            display: none;
+        }
+    }
+}
+
+.zen-btn-header {
+    padding: 0.65rem 1.25rem;
+    letter-spacing: $letter-spacing-s;
+}

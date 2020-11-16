@@ -1,0 +1,48 @@
+@import 'src/assets/scss/mixins.scss';
+
+#zen-home-header-hero {
+    @include hero-padding;
+    width: 100%;
+}
+
+.zen-hero-content {
+    margin-top: 5rem;
+    @media screen and (max-width: 600px) {
+        text-align: center;
+        margin-top: 0;
+    }
+}
+
+.zen-hero-content button {
+    @media screen and (max-width: 600px) {
+        margin: 0.25rem 0;
+    }
+}
+
+#zen-home-header-hero .zen-content {
+    font-family: $zen-font-regular;
+    color: #555555;
+    margin-top: 1rem;
+}
+
+.zen-hero-vector {
+    animation: fade-in-right .75s ease-in;
+}
+
+button.zen-auth-option {
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1.5rem;
+}
+
+.zen-auth-option-right {
+    animation: fade-in-right .5s ease-in;
+}
+
+.zen-auth-option-left {
+    animation: fade-in-left .5s ease-in;
+}
+
+.zen-account-features {
+    padding: $zen-hero-subcontent-padding;
+}

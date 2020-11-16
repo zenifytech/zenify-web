@@ -1,0 +1,37 @@
+@import 'mixins.scss';
+
+button {
+    border-radius: 0rem !important;
+}
+
+button:focus {
+    outline: none !important;
+}
+
+.zen-btn-primary {
+    @include solid-button($zen-palette-1, $white, $zen-palette-2, $white);
+}
+
+.zen-btn-solid-outline {
+    @include solid-outline-button($zen-palette-1, $white, $zen-palette-2);
+}
+
+.zen-btn-outline {
+    @include outline-button($zen-palette-1, $zen-palette-2);
+}
+
+.zen-btn-outline-solid {
+    @include outline-solid-button($zen-palette-1, $zen-palette-2, $white);
+}
+
+.zen-btn-outline-white {
+    @include outline-button($white, $zen-palette-2);
+}
+
+.zen-btn-solid-outline-white {
+    @include solid-outline-button($white, $zen-palette-2, $white);
+}
+
+.zen-btn-outline-solid-white {
+    @include outline-solid-button($white, $white,  $zen-palette-2);
+}

@@ -1,0 +1,80 @@
+<div class="zen-home-service-row mt-4 pt-4">
+    <div class="zen-home-service row">
+        <div class="zen-home-service-icon col-12 col-md-4">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-selection.svg" *ngIf="loadedOnce(0, 200)" @pop-up></object>
+        </div>
+        <div class="col-12 col-md-8 zen-service-info text-center">
+            <h5 class="zen-service-name zen-basic">Build your team</h5>
+            <p class="mb-4">
+                Choose your own team from our rich community of capable and talented seekers that fits your budget.
+            </p>
+            <button type="button" class="btn zen-btn-outline-solid mt-4" tabindex="1">Learn More</button>
+        </div>
+    </div>
+</div>
+<div class="zen-home-service-row mt-4 pt-4">
+    <div class="zen-home-service row">
+        <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-documentation.svg" *ngIf="loadedOnce(1, 600)" @pop-up></object>
+        </div>
+        <div class="col-12 col-md-8 zen-service-info text-center">
+            <h5 class="zen-service-name zen-basic">Document your project</h5>
+            <p class="mb-4">
+                Because of how much time it can cost a project and an ever-changing set of requirements, we often compromise in documentation. Zenify values its importance, so we take care of that for you.
+            </p>
+            <button type="button" class="btn zen-btn-outline-solid mt-4" tabindex="1">Learn More</button>
+        </div>
+        <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-documentation.svg" *ngIf="loadedOnce(1, 600)" @pop-up></object>
+        </div>
+    </div>
+</div>
+<div class="zen-home-service-row mt-4 pt-4">
+    <div class="zen-home-service row">
+        <div class="zen-home-service-icon col-12 col-md-4">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-workspace.svg" *ngIf="loadedOnce(2, 1300)" @pop-up></object>
+        </div>
+        <div class="col-12 col-md-8 zen-service-info text-center">
+            <h5 class="zen-service-name zen-basic">Work with your team in real-time</h5>
+            <p class="mb-4">
+                With Zenify Workspace, you can collaborate with your team and monitor your project's progress in real time.
+            </p>
+            <button type="button" class="btn zen-btn-outline-solid mt-4" tabindex="1">Learn More</button>
+        </div>
+    </div>
+</div>
+<div class="zen-home-service-row mt-4 pt-4">
+    <div class="zen-home-service row">
+        <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-management.svg" *ngIf="loadedOnce(3, 1723)" @pop-up></object>
+        </div>
+        <div class="col-12 col-md-8 zen-service-info text-center">
+            <h5 class="zen-service-name zen-basic">Zenify can manage</h5>
+            <p class="mb-4">
+                Too much on your plate? Or are you just unfamiliar with how things should be done? One of Zenify's premium offering includes a manager who can look after the project on your behalf until its delivery.
+            </p>
+            <button type="button" class="btn zen-btn-outline-solid mt-4" tabindex="1">Learn More</button>
+        </div>
+        <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-management.svg" *ngIf="loadedOnce(3, 1723)" @pop-up></object>
+        </div>
+    </div>
+</div>
+<div class="zen-home-service-row mt-4 pt-4">
+    <div class="zen-home-service row">
+        <div class="zen-home-service-icon col-12 col-md-4">
+            <object type="image/svg+xml" data="assets/images/svg/zenify-service-completion.svg" *ngIf="loadedOnce(4, 2013)" @pop-up></object>
+        </div>
+        <div class="col-12 col-md-8 zen-service-info text-center">
+            <h5 class="zen-service-name zen-basic">Assure your project's delivery</h5>
+            <p class="mb-4">
+                Plan ahead. Schedule meetings and demos with your team. Zenify can also help in testing your team's output to further assure its quality.
+            </p>
+            <button type="button" class="btn zen-btn-outline-solid mt-4" tabindex="1">Learn More</button>
+        </div>
+    </div>
+
+    <div id="zen-home-service-onboarding">
+        <button type="button" class="btn zen-btn-primary p-3 text-uppercase" routerLink="business/signup" tabindex="1">Zenify your project now!</button>
+    </div>
+</div>

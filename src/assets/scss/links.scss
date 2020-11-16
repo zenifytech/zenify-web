@@ -1,0 +1,12 @@
+@import 'mixins.scss';
+
+a.zen-primary-link {
+    @include active {
+        @include link($zen-palette-1);
+    }
+
+    @include hover-focus {
+        @include link($zen-palette-2);
+        border-bottom: thin solid $zen-palette-2;
+    }
+}

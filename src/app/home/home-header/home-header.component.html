@@ -1,0 +1,29 @@
+<div id="zen-home-header-container" class="d-inline-block mt-4">
+    <a href="#" routerLink="" tabindex="2"><img id="zen-header-logo" /></a>
+    <div id="zen-header-menu" class="float-right">
+        <section>
+            <a href="#" class="zen-header-menu text-uppercase" tabindex="2">Who we are</a>
+            <a href="#" class="zen-header-menu text-uppercase" tabindex="2">What we offer</a>
+            <a href="#" class="zen-header-menu text-uppercase" tabindex="2">Contact</a>
+            <button type="button" class="btn zen-btn-primary zen-btn-header text-uppercase ml-3" routerLink="/signin" *ngIf="!_authPage">Sign In</button>
+            <ng-container *ngTemplateOutlet="locationMenu"></ng-container>
+        </section>
+
+        <div class="zen-header-menu-toggle">
+            <ng-container *ngTemplateOutlet="locationMenu"></ng-container>
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="ml-2"><mat-icon>menu</mat-icon></button>
+            <mat-menu #menu="matMenu">
+                <button type="button" mat-menu-item>Who we are</button>
+                <button type="button" mat-menu-item>What we offer</button>
+                <button type="button" mat-menu-item routerLink="/signin" *ngIf="!_authPage">Signin</button>
+            </mat-menu>
+        </div>
+
+        <ng-template #locationMenu>
+            <button mat-icon-button [matMenuTriggerFor]="menu" class="zen-header-location w-auto" tabindex="2"><mat-icon class="mr-2">place</mat-icon><span class="pt-2">{{_appLocale}}</span></button>
+            <mat-menu #menu="matMenu">
+                <button type="button" mat-menu-item *ngFor="let locale of appLocales()" (click)="setLocale(locale)" tabindex="2">{{locale}}</button>
+            </mat-menu>
+        </ng-template>
+    </div>
+</div>

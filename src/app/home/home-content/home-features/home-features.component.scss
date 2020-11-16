@@ -1,0 +1,12 @@
+@import 'src/assets/scss/mixins.scss';
+
+ul {
+    list-style: none;
+    margin: 2rem 0;
+    padding-left: 0;
+    font-family: $zen-font-regular;
+}
+
+li mat-icon {
+    color: $zen-palette-2;
+}

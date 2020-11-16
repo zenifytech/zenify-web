@@ -1,0 +1,37 @@
+@import 'src/assets/scss/mixins.scss';
+
+#zen-home-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header"
+        "content"
+        "footer";
+}
+
+#zen-home-header {
+    grid-area: header;
+    @include page-padding;
+    width: 100%;
+    min-height: 70vh;
+}
+
+#zen-home-header object {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+#zen-home-content {
+    grid-area: content;
+    margin-top: 5em;
+}
+
+#zen-home-footer {
+    @include page-padding;
+    grid-area: footer;
+    background: $zen-palette-4;
+}

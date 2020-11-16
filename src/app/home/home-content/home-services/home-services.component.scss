@@ -1,0 +1,32 @@
+@import 'src/assets/scss/mixins.scss';
+
+.zen-home-service-row {
+    @include page-padding;
+}
+
+.zen-home-service {
+    padding: 3rem 0;
+}
+
+.zen-service-name {
+    font-family: $zen-font-light;
+    padding-top: 3rem;
+    margin-bottom: 1rem;
+}
+
+object {
+    width: inherit;
+}
+
+.zen-service-info {
+    padding: 4rem;
+    @media screen and (max-width: 600px) {
+        padding: 1rem;
+    }
+}
+
+#zen-home-service-onboarding {
+    margin-top: 10rem;
+    margin-bottom: 2.5rem;
+    text-align: center;
+}

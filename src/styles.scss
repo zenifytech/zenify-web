@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+@import 'assets/scss/mixins.scss';
+@import 'assets/scss/theme.scss';
+@import 'assets/scss/links.scss';
+@import 'assets/scss/buttons.scss';
+@import 'assets/scss/links.scss';
+@import 'assets/scss/text.scss';
+@import 'assets/scss/animations.scss';
+@import 'assets/fonts/stylesheet.css';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: $zen-font-regular; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: $zen-palette-3;
+    font-family: $zen-font-bold;
+    font-weight: bolder;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    border-left: medium solid $zen-palette-2;
+    padding-left: $zen-header-text-padding;
+}
+
+h2.zen-basic,
+h3.zen-basic,
+h4.zen-basic,
+h5.zen-basic,
+h6.zen-basic {
+    border-left: none;
+    padding-left: 0;
+}
+
+button {
+    font-family: $zen-font-regular;
+}
+
+.form-control {
+    border-radius: 0;
+}
+
+.zen-validated-form {
+    color: $zen-palette-2;
+}

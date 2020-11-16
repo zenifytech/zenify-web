@@ -1,0 +1,110 @@
+@import 'mixins.scss';
+
+@mixin fade-in-before($direction: undefined, $value: 0) {
+    opacity: 0;
+    position: relative;
+    @if $direction == 'top' {
+        top: $value;
+    }
+    @if $direction == 'right' {
+        right: $value;
+    }
+    @if $direction == 'bottom' {
+        bottom: $value;
+    }
+    @if $direction == 'left' {
+        left: $value;
+    }
+}
+
+@mixin fade-in-after($direction: undefined, $value: 0) {
+    opacity: 1;
+    position: relative;
+    @if $direction == 'top' {
+        top: $value;
+    }
+    @if $direction == 'right' {
+        right: $value;
+    }
+    @if $direction == 'bottom' {
+        bottom: $value;
+    }
+    @if $direction == 'left' {
+        left: $value;
+    }
+}
+
+@keyframes fade-in-left {
+    0% { @include fade-in-before('left', -5em); }
+    100% { @include fade-in-after('left', 0); }
+}
+
+@-moz-keyframes fade-in-left {
+    0% { @include fade-in-before('left', -5em); }
+    100% { @include fade-in-after('left', 0); }
+}
+
+@-webkit-keyframes fade-in-left {
+    0% { @include fade-in-before('left', -5em); }
+    100% { @include fade-in-after('left', 0); }
+}
+
+@-o-keyframes fade-in-left {
+    0% { @include fade-in-before('left', -5em); }
+    100% { @include fade-in-after('left', 0); }
+}
+
+@-ms-keyframes fade-in-left {
+    0% { @include fade-in-before('left', -5em); }
+    100% { @include fade-in-after('left', 0); }
+}
+
+@keyframes fade-in-right {
+    0% { @include fade-in-before('right', -5em); }
+    100% { @include fade-in-after('right', 0); }
+}
+
+@-moz-keyframes fade-in-right {
+    0% { @include fade-in-before('right', -5em); }
+    100% { @include fade-in-after('right', 0); }
+}
+
+@-webkit-keyframes fade-in-right {
+    0% { @include fade-in-before('right', -5em); }
+    100% { @include fade-in-after('right', 0); }
+}
+
+@-o-keyframes fade-in-right {
+    0% { @include fade-in-before('right', -5em); }
+    100% { @include fade-in-after('right', 0); }
+}
+
+@-ms-keyframes fade-in-right {
+    0% { @include fade-in-before('right', -5em); }
+    100% { @include fade-in-after('right', 0); }
+}
+
+@keyframes fade-in-top {
+    0% { @include fade-in-before('top', -5em); }
+    100% { @include fade-in-after('top', 0); }
+}
+
+@-moz-keyframes fade-in-top {
+    0% { @include fade-in-before('top', -5em); }
+    100% { @include fade-in-after('top', 0); }
+}
+
+@-webkit-keyframes fade-in-top {
+    0% { @include fade-in-before('top', -5em); }
+    100% { @include fade-in-after('top', 0); }
+}
+
+@-o-keyframes fade-in-top {
+    0% { @include fade-in-before('top', -5em); }
+    100% { @include fade-in-after('top', 0); }
+}
+
+@-ms-keyframes fade-in-top {
+    0% { @include fade-in-before('top', -5em); }
+    100% { @include fade-in-after('top', 0); }
+}
