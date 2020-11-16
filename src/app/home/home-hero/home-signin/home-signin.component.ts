@@ -79,7 +79,7 @@ export class HomeSigninComponent implements OnInit {
       .pipe(untilDestroyed(this))
       .subscribe(domain => {
         this._accountDomain = domain;
-        this._accountValid = this._accountDomain === 'PROPRIETOR' || this._accountDomain === 'ASSOCIATE';
+        this._accountValid = this._accountDomain === 'BUSINESS' || this._accountDomain === 'COMMUNITY';
       });
   }
 

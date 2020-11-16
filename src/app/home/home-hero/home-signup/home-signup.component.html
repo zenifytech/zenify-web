@@ -1,7 +1,7 @@
 <div id="zen-register-form">
     <div *ngIf="_onRegisterPage else signupNavigation">
         <div *ngIf="_signupForm">
-            <form [formGroup]="_signupForm" (submit)="signup()">
+            <form [formGroup]="_signupForm" #formDirective="ngForm" (submit)="signup(formDirective)">
                 <h3 class="mb-3">Create {{getAccountType()}} account</h3>
         
                 <small class="zen-text-dark-grey mb-3" *ngIf="_onBusinessPage">
@@ -14,10 +14,10 @@
                     <mat-form-field appearance="fill" class="w-100">
                         <mat-label>Email</mat-label>
                         <input matInput formControlName="email" autocomplete="off" (focusout)="validateEmail()" tabindex="1" required>
-                        <mat-hint class="zen-validated-form" *ngIf="!formError('email') && _emailAvailable">Email is available</mat-hint>
+                        <mat-hint class="zen-validated-form" *ngIf="_emailAvailable">{{_messages.RESULT_MESSAGE_EMAIL_CHECK_SUCCESS}}</mat-hint>
 
                         <mat-error *ngIf="formError('email', 'pattern')">{{_messages.FORM_EMAIL_FORMAT_ERROR}}</mat-error>
-                        <mat-error *ngIf="!formError('email', 'pattern') && _emailError">{{_emailError}}</mat-error>
+                        <mat-error *ngIf="_signupForm.get('email').getError('invalidEmail')">{{_messages.RESULT_MESSAGE_EMAIL_CHECK_ERROR}}</mat-error>
                     </mat-form-field>
                 </div>
                 <div class="mt-3">

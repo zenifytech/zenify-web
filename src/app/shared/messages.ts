@@ -27,6 +27,7 @@ export const Messages = {
     RESULT_HEADER_SIGNUP_ERROR: "Oops!",
 
     RESULT_MESSAGE_SIGNUP_SUCCESS: "Your account was successfully created. Verify your email to receive notifications on your projects.",
+    RESULT_MESSAGE_EMAIL_CHECK_SUCCESS: "Email is available",
 
     RESULT_MESSAGE_ERROR: "We are unable to process your request at this time. You may try again at a later time or if the error persists, contact us so we can assist you.",
     RESULT_MESSAGE_SIGNUP_ERROR: "We were unable to create your account. You may try again at a later time or if the error persists, contact us so we can assist you.",
@@ -34,7 +35,7 @@ export const Messages = {
     RESULT_MESSAGE_INVALID_EMAIL_ERROR: "Email is invalid",
     RESULT_MESSAGE_SIGNIN_ERROR: "Password is invalid",
 
-    FORM_EMAIL_FORMAT_ERROR: "Email format not supported",
+    FORM_EMAIL_FORMAT_ERROR: "Email is invalid",
     FORM_PASSWORD_MISMATCH_ERROR: "Passwords do not match",
     FORM_LETTERS_ONLY_ERROR: "Special characters and numbers are not allowed"
 }

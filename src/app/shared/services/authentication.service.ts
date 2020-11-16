@@ -21,6 +21,9 @@ export class AuthenticationService {
   private _domain = new BehaviorSubject<string>(undefined);
   private _currentUser = new BehaviorSubject<UserAccount>(undefined);
 
+  private _businessUserSignedIn: boolean;
+  private _communityUserSignedIn: boolean;
+
   constructor(
     private http: HttpClient,
     private firebaseService: FirebaseService,
@@ -70,7 +73,7 @@ export class AuthenticationService {
   }
 
   public signup(account: AccountRequest, domain: string) {
-    const type = (domain === 'PROPRIETOR') ? QueryEventType.SIGNUP_PROPRIETOR : QueryEventType.SIGNUP_ASSOCIATE;
+    const type = (domain === 'BUSINESS') ? QueryEventType.SIGNUP_PROPRIETOR : QueryEventType.SIGNUP_ASSOCIATE;
     this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.IN_PROGRESS});
 
     this.http.post(this._serviceUrl + '/auth/v1/sign-up', account)
@@ -81,7 +84,7 @@ export class AuthenticationService {
   }
 
   public signin(email: string, password: string, domain: string) {
-    const type = (domain === 'PROPRIETOR') ? QueryEventType.SIGNIN_PROPRIETOR : QueryEventType.SIGNIN_ASSOCIATE;
+    const type = (domain === 'BUSINESS') ? QueryEventType.SIGNIN_PROPRIETOR : QueryEventType.SIGNIN_ASSOCIATE;
     this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.IN_PROGRESS});
 
     this.auth(domain).signInWithEmailAndPassword(email, password).then(response => {
@@ -105,7 +108,7 @@ export class AuthenticationService {
   }
 
   private subscribeToProprietorUsers() {
-    this.auth('proprietor').user.subscribe(user => {
+    this.auth('BUSINESS').user.subscribe(user => {
       const type = QueryEventType.FEDERATE_PROPRIETOR;
       if (user) {
         localStorage.setItem("user.uid", user.uid);
@@ -123,12 +126,15 @@ export class AuthenticationService {
               this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
             });
         });
+      } else {
+        this._businessUserSignedIn = false;
+        this.clearUserSession();
       }
     });
   }
 
   private subscribeToAssociateUsers() {
-    this.auth('associate').user.subscribe(user => {
+    this.auth('COMMUNITY').user.subscribe(user => {
       const type = QueryEventType.FEDERATE_ASSOCIATE;
       if (user) {
         localStorage.setItem("user.uid", user.uid);
@@ -146,12 +152,15 @@ export class AuthenticationService {
               this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
             });
         });
+      } else {
+        this._communityUserSignedIn = false;
+        this.clearUserSession();
       }
     });
   }
 
   private auth(domain: string) {
-    return (domain === 'PROPRIETOR') ? this.firebaseService.businessAuth : this.firebaseService.communityAuth;
+    return (domain === 'BUSINESS') ? this.firebaseService.businessAuth : this.firebaseService.communityAuth;
   }
 
   private addParam(url: string, key: string, value: string): string {
@@ -170,6 +179,16 @@ export class AuthenticationService {
     }
     
     return completeUrl;
+  }
+
+  private clearUserSession() {
+    if (!this._businessUserSignedIn && !this._communityUserSignedIn) {
+      localStorage.removeItem("user.uid");
+      localStorage.removeItem("user.domain");
+      localStorage.removeItem("user.id-token");
+      localStorage.removeItem("user.email");
+      this._currentUser.next(undefined);
+    }
   }
 
   private handleErrors<T>(eventType: QueryEventType, response?: T): (error: any) => T {

@@ -19,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     SpinnerComponent,
     ResultDialogComponent,
-    DialogComponent],
+    DialogComponent
+  ],
   imports: [
     CommonModule,
     HttpClientModule,

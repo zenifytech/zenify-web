@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormGroupDirective, Validators } from '@angular/forms';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QueryEventStatus } from 'src/app/shared/enums/query-event-status.enum';
 import { QueryEventType } from 'src/app/shared/enums/query-event-type.enum';
@@ -26,7 +26,6 @@ export class HomeSignupComponent implements OnInit {
   public _signupForm: FormGroup;
 
   public _emailAvailable: boolean;
-  public _emailError: string;
   public _passwordError: string;
 
   constructor(
@@ -71,7 +70,7 @@ export class HomeSignupComponent implements OnInit {
   
   public validateEmail() {
     if (this._signupForm.get('email').valid) {
-      this.authService.checkEmailAvailability(this._signupForm.get('email').value, this._onBusinessPage ? 'PROPRIETOR' : 'ASSOCIATE');
+      this.authService.checkEmailAvailability(this._signupForm.get('email').value, this._onBusinessPage ? 'BUSINESS' : 'COMMUNITY');
     }
   }
 
@@ -79,7 +78,7 @@ export class HomeSignupComponent implements OnInit {
     this._passwordError = (this._signupForm.get('password').value !== this._signupForm.get('confirmPw').value) ? Messages.FORM_PASSWORD_MISMATCH_ERROR : undefined;
   }
 
-  public signup() {
+  public signup(formDirective: FormGroupDirective) {
     if (this._signupForm.valid) {
       const account: AccountRequest = {
         email: this._signupForm.get('email').value,
@@ -88,7 +87,8 @@ export class HomeSignupComponent implements OnInit {
         lastName: this._signupForm.get('lastName').value
       }
 
-      this.authService.signup(account, this._onBusinessPage ? 'PROPRIETOR' : 'ASSOCIATE');
+      this.authService.signup(account, this._onBusinessPage ? 'BUSINESS' : 'COMMUNITY');
+      formDirective.resetForm();
     }
   }
 
@@ -99,13 +99,18 @@ export class HomeSignupComponent implements OnInit {
         if (event) {
           switch (event.type) {
             case QueryEventType.DOMAIN_CHECK: {
-              this._emailError = (event.status === QueryEventStatus.ERROR) ? Messages.RESULT_MESSAGE_EMAIL_CHECK_ERROR : '';
               this._emailAvailable = event.status === QueryEventStatus.COMPLETED;
+
+              if (this._signupForm) {
+                this._signupForm.get('email').setErrors(this._emailAvailable ? null : { invalidEmail: true });
+              }
               break;
             }
-            case QueryEventType.SIGNUP_PROPRIETOR: {
+            case QueryEventType.SIGNUP_PROPRIETOR:
+            case QueryEventType.SIGNUP_ASSOCIATE: {
               if (event.status === QueryEventStatus.COMPLETED) {
-                this.initializeForm();
+                this._emailAvailable = undefined;
+                this._signupForm.reset();
               }
               break;
             }

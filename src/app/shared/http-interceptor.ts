@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpRequest, HttpHandler, HttpEvent, HttpInterceptor, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { RouteMatcherService } from './services/route-matcher.service';
 
 @Injectable()
 export class ZenifyHttpInterceptor implements HttpInterceptor {
 
-    constructor() {}
+    constructor(
+        private routeMatcher: RouteMatcherService
+    ) {}
 
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         if (localStorage.getItem('user.uid')
@@ -20,6 +23,14 @@ export class ZenifyHttpInterceptor implements HttpInterceptor {
                     })
             });
     
+            return next.handle(clonedRequest);
+        } else if (!localStorage.getItem('user.domain')) {
+            const clonedRequest = request.clone({
+                headers: new HttpHeaders({
+                    'X-Domain' : this.routeMatcher.startsWith('business') ? 'BUSINESS' : 'COMMUNITY'
+                    })
+            });
+
             return next.handle(clonedRequest);
         }
 
