@@ -1,0 +1,11 @@
+@import 'src/assets/scss/mixins.scss';
+
+main#zen-lounge-container {
+    display: flex;
+    flex-direction: column;
+    min-height: $full-page-height;
+}
+
+#zen-lounge-content {
+    flex: 1 1 auto;
+}

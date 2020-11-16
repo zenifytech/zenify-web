@@ -89,8 +89,6 @@ export class AuthenticationService {
 
     this.auth(domain).signInWithEmailAndPassword(email, password).then(response => {
       if (response) {
-        localStorage.setItem("user.email", email);
-        localStorage.setItem("user.domain", domain);
         this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
       }
     }, err => {
@@ -98,8 +96,34 @@ export class AuthenticationService {
     });
   }
 
+  public federate(type: QueryEventType) {
+    this.http.post<UserAccount>(this._serviceUrl + '/auth/v1/federate', {})
+    .pipe(catchError(this.handleErrors(type, [])))
+    .subscribe(response => {
+      localStorage.setItem("user", response);
+      this._currentUser.next(response);
+      this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
+    });
+  }
+
+  public signOut() {
+    const type = QueryEventType.SIGNOUT;
+    console.log("Signing out...");
+
+    this.auth('BUSINESS').signOut().then(response => {
+      this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
+    });
+    this.auth('COMMUNITY').signOut().then(response => {
+      this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
+    });
+  }
+
   public get domain(): Observable<string> {
     return this._domain.asObservable();
+  }
+
+  public get currentUser(): Observable<UserAccount> {
+    return this._currentUser.asObservable();
   }
 
   private subscribeToAuthenticatedUsers() {
@@ -112,19 +136,12 @@ export class AuthenticationService {
       const type = QueryEventType.FEDERATE_PROPRIETOR;
       if (user) {
         localStorage.setItem("user.uid", user.uid);
+        localStorage.setItem("user.domain", "BUSINESS");
 
         user.getIdToken().then(token => {
           localStorage.setItem("user.id-token", token);
 
-          this.http.post<UserAccount>(this._serviceUrl + '/auth/v1/federate', {})
-            .pipe(catchError(this.handleErrors(type, [])))
-            .subscribe(response => {
-              if (response) {
-                this._currentUser.next(response);
-              }
-              
-              this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
-            });
+          this.federate(type);
         });
       } else {
         this._businessUserSignedIn = false;
@@ -138,19 +155,12 @@ export class AuthenticationService {
       const type = QueryEventType.FEDERATE_ASSOCIATE;
       if (user) {
         localStorage.setItem("user.uid", user.uid);
+        localStorage.setItem("user.domain", "COMMUNITY");
 
         user.getIdToken().then(token => {
           localStorage.setItem("user.id-token", token);
 
-          this.http.post<UserAccount>(this._serviceUrl + '/auth/v1/federate', {})
-            .pipe(catchError(this.handleErrors(type, [])))
-            .subscribe(response => {
-              if (response) {
-                this._currentUser.next(response);
-              }
-              
-              this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.COMPLETED});
-            });
+          this.federate(type);
         });
       } else {
         this._communityUserSignedIn = false;
@@ -186,7 +196,6 @@ export class AuthenticationService {
       localStorage.removeItem("user.uid");
       localStorage.removeItem("user.domain");
       localStorage.removeItem("user.id-token");
-      localStorage.removeItem("user.email");
       this._currentUser.next(undefined);
     }
   }

@@ -42,7 +42,7 @@ export class RouteMatcherService {
   }
 
   public homePage(): boolean {
-    return !this.childRoute();
+    return this.matches('home');
   }
 
   public authPage(): boolean {

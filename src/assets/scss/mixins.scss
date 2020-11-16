@@ -16,6 +16,14 @@
     }
 }
 
+@mixin lounge-padding() {
+    padding: $zen-lounge-page-padding;
+
+    @media only screen and (max-width: 1024px) {
+        padding: $zen-page-padding-mobile;
+    }
+}
+
 @mixin position($position, $top: undefined, $right: undefined, $bottom: undefined, $left: undefined) {
     position: $position;
 

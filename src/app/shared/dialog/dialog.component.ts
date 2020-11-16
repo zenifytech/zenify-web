@@ -18,7 +18,10 @@ export class DialogComponent implements OnInit {
   private _hideDialogsOnEvent = [
     QueryEventType.DOMAIN_CHECK,
     QueryEventType.SIGNIN_PROPRIETOR,
-    QueryEventType.SIGNIN_ASSOCIATE
+    QueryEventType.SIGNIN_ASSOCIATE,
+    QueryEventType.FEDERATE_PROPRIETOR,
+    QueryEventType.FEDERATE_ASSOCIATE,
+    QueryEventType.SIGNOUT
   ]
 
   constructor(

@@ -1,0 +1,84 @@
+@import 'src/assets/scss/mixins.scss';
+
+#zen-lounge-header-container {
+    display: flex;
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    white-space: nowrap;
+    background: $white;
+    border-bottom: thin solid #dddddd;
+    @media screen and (max-width: 600px) {
+        padding: .75rem 1rem;
+    }
+}
+
+#zen-lounge-header-container .filler {
+    flex: 1 1 auto;
+}
+
+img#zen-header-logo {
+    content: url('src/assets/images/logo/zenify-icon.webp');
+    width: 2.5em;
+    margin-right: 1.5rem;
+    @media screen and (max-width: 600px) {
+        margin-right: 0;
+    }
+}
+
+#zen-lounge-header-profile-thumb {
+    border-radius: 100% !important;
+    border: medium solid $off-white;
+    background-color: $off-white;
+    color: $dark-grey;
+}
+
+button mat-icon {
+    color: $off-white-2 !important;
+}
+
+.zen-header-menu mat-icon {
+    vertical-align: text-bottom;
+}
+
+#zen-header-user-name {
+    font-family: $zen-font-bold;
+    text-transform: uppercase;
+}
+
+#zen-lounge-header-container section {
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
+}
+
+#zen-lounge-header-container .zen-header-menu-toggle {
+    display: none;
+    @media screen and (max-width: 600px) {
+        display: block;
+    }
+}
+
+a.zen-header-menu {
+    @include active {
+        @include link($dark-grey);
+        font-family: $zen-font-regular;
+        margin: 0 1em;
+        padding-bottom: 0.25em;
+        @media screen and (max-width: 768px) {
+            margin: 0 0.5em;
+        }
+    }
+
+    @include hover-focus {
+        @include link($zen-palette-2);
+    }
+}
+
+a.zen-header-menu {
+    @include hover-focus {
+        border-bottom: thin solid $zen-palette-2;
+    }
+}

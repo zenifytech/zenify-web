@@ -1,6 +1,7 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QueryEventStatus } from 'src/app/shared/enums/query-event-status.enum';
 import { QueryEventType } from 'src/app/shared/enums/query-event-type.enum';
@@ -51,7 +52,8 @@ export class HomeSigninComponent implements OnInit {
     private authService: AuthenticationService,
     private queryEventService: QueryEventService,
     private routeMatcher: RouteMatcherService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -101,12 +103,13 @@ export class HomeSigninComponent implements OnInit {
               }
               break;
             }
-            case QueryEventType.SIGNIN_PROPRIETOR:
-            case QueryEventType.SIGNIN_ASSOCIATE: {
+            case QueryEventType.FEDERATE_PROPRIETOR:
+            case QueryEventType.FEDERATE_ASSOCIATE: {
               if (event.status === QueryEventStatus.COMPLETED) {
                 this._passwordForm.get('password').setErrors({
                   signinFailed: false
                 });
+                this.router.navigateByUrl("lounge");
               } else if (event.status === QueryEventStatus.ERROR) {
                 this._passwordForm.get('password').setErrors({
                   signinFailed: true
