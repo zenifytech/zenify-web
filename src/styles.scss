@@ -40,12 +40,20 @@ h6.zen-basic {
     padding-left: 0;
 }
 
+a.zen-basic {
+    border: none !important;
+}
+
 button {
     font-family: $zen-font-regular;
 }
 
 .form-control {
     border-radius: 0;
+}
+
+.filler {
+    flex: 1 1 auto;
 }
 
 .zen-validated-form {

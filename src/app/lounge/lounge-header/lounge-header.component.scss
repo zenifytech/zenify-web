@@ -1,22 +1,14 @@
 @import 'src/assets/scss/mixins.scss';
 
 #zen-lounge-header-container {
-    display: flex;
+    @include flex-row;
     box-sizing: border-box;
     padding: 0 1.5rem;
-    width: 100%;
-    flex-direction: row;
-    align-items: center;
-    white-space: nowrap;
     background: $white;
     border-bottom: thin solid #dddddd;
     @media screen and (max-width: 600px) {
         padding: .75rem 1rem;
     }
-}
-
-#zen-lounge-header-container .filler {
-    flex: 1 1 auto;
 }
 
 img#zen-header-logo {
