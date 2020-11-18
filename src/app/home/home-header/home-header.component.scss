@@ -30,11 +30,11 @@ div#zen-header-menu .zen-header-menu-toggle {
 a.zen-header-menu,
 .zen-header-location {
     @include active {
-        @include link($zen-palette-1);
+        @include link($dark-grey);
         font-family: $zen-font-regular;
         letter-spacing: $letter-spacing-s;
         margin: 0 1em;
-        padding-bottom: 0.5em;
+        padding-bottom: 0.25em;
         @media screen and (max-width: 768px) {
             margin: 0 0.5em;
         }
