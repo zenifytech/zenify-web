@@ -6,6 +6,7 @@
     grid-template-rows: auto 1fr auto;
     grid-template-areas: 
         "header"
+        "hero"
         "content"
         "footer";
 }
@@ -14,7 +15,13 @@
     grid-area: header;
     @include page-padding;
     width: 100%;
-    min-height: 70vh;
+    background: white;
+}
+
+#zen-home-hero {
+    grid-area: hero;
+    @include page-padding;
+    background: #e8faff;
 }
 
 #zen-home-header object {
