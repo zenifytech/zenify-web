@@ -36,8 +36,8 @@ export class HomeSignupComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this._onBusinessPage = this.routeMatcher.matches('business/signup');
-    this._onCommunityPage = this.routeMatcher.matches('community/signup');
+    this._onBusinessPage = this.routeMatcher.matches('home/business/signup');
+    this._onCommunityPage = this.routeMatcher.matches('home/community/signup');
     this._onRegisterPage = this._onBusinessPage || this._onCommunityPage;
 
     this.subscribeToQueryEvents();

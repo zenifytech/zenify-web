@@ -20,7 +20,7 @@ import { RouteMatcherService } from 'src/app/shared/services/route-matcher.servi
       'slide-right', [
         transition(
           ':enter',  [
-            style({ 'position':'relative', 'margin-right': '-5rem', 'margin-left': '5rem', opacity: 0 }),
+            style({ 'position':'absolute', 'margin-right': '-5rem', 'margin-left': '5rem', opacity: 0 }),
             animate('.5s ease-out', 
                     style({ 'position':'relative', 'margin-right': '0', 'margin-left': '0', opacity: 0.8 }))
           ]
@@ -29,7 +29,7 @@ import { RouteMatcherService } from 'src/app/shared/services/route-matcher.servi
           ':leave',  [
             style({ 'position': 'relative', 'margin-right': '0', 'margin-left': '0', opacity: 0.8 }),
             animate('.2s ease-in', 
-                    style({ 'position': 'relative', 'margin-right': '-5rem', 'margin-left': '5rem', opacity: 0 }))
+                    style({ 'position': 'absolute', 'margin-right': '-5rem', 'margin-left': '5rem', opacity: 0 }))
           ]
         )
       ]
@@ -74,6 +74,11 @@ export class HomeSigninComponent implements OnInit {
 
   public signin() {
     this.authService.signin(this._accountForm.get('email').value, this._passwordForm.get('password').value, this._accountDomain);
+  }
+
+  public back() {
+    this._accountValid = false;
+    this.resetForms();
   }
 
   private subscribeToAccountDomain() {
@@ -130,5 +135,10 @@ export class HomeSigninComponent implements OnInit {
     this._passwordForm = this.formBuilder.group({
       password: this.formBuilder.control('', Validators.required)
     })
+  }
+
+  private resetForms() {
+    this._accountForm.reset();
+    this._passwordForm.reset();
   }
 }

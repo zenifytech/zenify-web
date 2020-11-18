@@ -5,10 +5,10 @@
                 <h3 class="mb-3">Create {{getAccountType()}} account</h3>
         
                 <small class="zen-text-dark-grey mb-3" *ngIf="_onBusinessPage">
-                    If you're looking to work on projects, <a href="#" class="zen-primary-link" routerLink="/community/signup" tabindex="1">create an Associate account</a> instead.
+                    If you're looking to work on projects, <a href="#" class="zen-primary-link" routerLink="community/signup" tabindex="1">create an Associate account</a> instead.
                 </small>
                 <small class="zen-text-dark-grey mb-3" *ngIf="_onCommunityPage">
-                    If you're starting your own project, <a href="#" class="zen-primary-link" routerLink="/business/signup" tabindex="1">create a Proprietor account</a> instead.
+                    If you're starting your own project, <a href="#" class="zen-primary-link" routerLink="business/signup" tabindex="1">create a Proprietor account</a> instead.
                 </small>
                 <div class="mt-4 pt-3">
                     <mat-form-field appearance="fill" class="w-100">
@@ -63,7 +63,7 @@
     </div>
     <ng-template #signupNavigation>
         <h3>New to Zenify?</h3>
-        <button type="button" class="btn zen-btn-outline-solid zen-auth-option mr-2" routerLink="/business/signup" tabindex="1">I have a project</button>
-        <button type="button" class="btn zen-btn-outline-solid zen-auth-option mr-2" routerLink="/community/signup" tabindex="1">I want to work on a project</button>
+        <button type="button" class="btn zen-btn-outline-solid zen-auth-option mr-2" routerLink="business/signup" tabindex="1">I have a project</button>
+        <button type="button" class="btn zen-btn-outline-solid zen-auth-option mr-2" routerLink="community/signup" tabindex="1">I want to work on a project</button>
     </ng-template>
 </div>
