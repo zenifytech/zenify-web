@@ -46,7 +46,7 @@ export class RouteMatcherService {
   }
 
   public authPage(): boolean {
-    return this.matches('signin') || this.matches('business/signup') || this.matches('community/signup');
+    return this.matches('signin') || this.matches('home/business/signup') || this.matches('home/community/signup');
   }
 
   private childRoute() {
