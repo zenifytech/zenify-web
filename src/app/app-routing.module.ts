@@ -5,8 +5,7 @@ import { LoungeModule } from './lounge/lounge.module';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
-  { path: 'home', loadChildren: () => HomeModule },
+  { path: '', pathMatch: 'full', loadChildren: () => HomeModule },
   { path: 'lounge', loadChildren: () => LoungeModule }
 ];
 

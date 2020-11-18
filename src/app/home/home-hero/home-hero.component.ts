@@ -9,8 +9,8 @@ import { RouteMatcherService } from 'src/app/shared/services/route-matcher.servi
 export class HomeHeroComponent implements OnInit {
 
   public _mobileView: boolean;
-  public _authView: boolean;
-  public _signinPage: boolean;
+  public _homePage: boolean;
+  public _aboutPage: boolean;
 
   constructor(
     private routeMatcher: RouteMatcherService
@@ -18,7 +18,7 @@ export class HomeHeroComponent implements OnInit {
 
   ngOnInit(): void {
     this._mobileView = window.innerWidth <= 600;
-    this._authView = this.routeMatcher.authPage();
-    this._signinPage = this.routeMatcher.matches('signin');
+    this._homePage = this.routeMatcher.homePage();
+    this._aboutPage = this.routeMatcher.matches('about');
   }
 }

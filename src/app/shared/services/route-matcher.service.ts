@@ -42,11 +42,7 @@ export class RouteMatcherService {
   }
 
   public homePage(): boolean {
-    return this.matches('home');
-  }
-
-  public authPage(): boolean {
-    return this.matches('signin') || this.matches('home/business/signup') || this.matches('home/community/signup');
+    return this.childRoute() === undefined ? true : false;
   }
 
   private childRoute() {

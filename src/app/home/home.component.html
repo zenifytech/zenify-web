@@ -2,10 +2,10 @@
     <section id="zen-home-header">
         <zen-home-header></zen-home-header>
     </section>
-    <section id="zen-home-hero">
+    <section id="zen-home-hero" *ngIf="_homePage">
         <zen-home-hero></zen-home-hero>
     </section>
-    <section id="zen-home-content" *ngIf="!_authPage">
+    <section id="zen-home-content">
         <zen-home-content></zen-home-content>
     </section>
     <section id="zen-home-footer">

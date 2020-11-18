@@ -9,6 +9,7 @@ import { RouteMatcherService } from 'src/app/shared/services/route-matcher.servi
 export class HomeContentComponent implements OnInit {
 
   public _homePage: boolean;
+  public _aboutPage: boolean;
 
   constructor(
     private routeMatcher: RouteMatcherService
@@ -16,6 +17,7 @@ export class HomeContentComponent implements OnInit {
 
   ngOnInit(): void {
     this._homePage = this.routeMatcher.homePage();
+    this._aboutPage = this.routeMatcher.matches('about');
   }
 
 }

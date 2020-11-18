@@ -8,13 +8,13 @@ import { RouteMatcherService } from '../shared/services/route-matcher.service';
 })
 export class HomeComponent implements OnInit {
 
-  public _authPage: boolean;
+  public _homePage: boolean;
 
   constructor(
     private routeMatcher: RouteMatcherService
   ) { }
 
   ngOnInit(): void {
-    this._authPage = this.routeMatcher.authPage();
+    this._homePage = this.routeMatcher.homePage();
   }
 }

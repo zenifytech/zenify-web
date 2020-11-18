@@ -5,17 +5,7 @@ import { HomeComponent } from './home.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'signin', component: HomeComponent },
-  { path: 'business',
-    children: [
-      { path: 'signup', component: HomeComponent }
-    ]
-  },
-  { path: 'community',
-    children: [
-      { path: 'signup', component: HomeComponent }
-    ]
-  }
+  { path: 'about', component: HomeComponent }
 ];
 
 @NgModule({
