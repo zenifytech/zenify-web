@@ -1,0 +1,27 @@
+<mat-card>
+    <h6 class="zen-card-title text-uppercase">Calendar</h6>
+    <div class="mt-4" [formGroup]="_calendarForm">
+        <mat-datepicker-toggle matSuffix [for]="picker">
+            <a href="#" [routerLink]="" matDatepickerToggleIcon class="zen-primary-link zen-basic w-100">
+                {{_calendarForm.get('date').value | date: 'mediumDate'}} <mat-icon>keyboard_arrow_down</mat-icon>
+            </a>
+        </mat-datepicker-toggle>
+
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-form-field class="zen-calendar-input w-100">
+            <mat-label>Choose a date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="date">
+        </mat-form-field>
+        <div class="zen-calendar-day">
+            <div *ngIf="(_today | date: 'mediumDate') === (_calendarForm.get('date').value | date: 'mediumDate') then today else displayWeekDay"></div>
+        </div>
+        <ng-template #today>
+            <strong>Today</strong>
+        </ng-template>
+        <ng-template #displayWeekDay>
+            {{displayDay()}}
+        </ng-template>
+
+        <div class="mt-4 text-center">No items to display.</div>
+    </div>
+</mat-card>

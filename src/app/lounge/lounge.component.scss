@@ -7,5 +7,24 @@ main#zen-lounge-container {
 }
 
 #zen-lounge-content {
+    @include lounge-padding;
     flex: 1 1 auto;
+}
+
+#zen-lounge-page-title {
+    @include flex-row;
+    margin-bottom: .5rem;
+}
+
+#zen-lounge-page-title button {
+    margin-top: -.5rem;
+}
+
+.zen-card-title {
+    font-family: $zen-font-regular;
+}
+
+.zen-card-transparent {
+    background: transparent;
+    box-shadow: none;;
 }

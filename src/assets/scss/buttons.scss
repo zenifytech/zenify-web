@@ -8,6 +8,20 @@ button:focus {
     outline: none !important;
 }
 
+.zen-btn {
+    @include active {
+        @include link($dark-grey);
+        margin: 0 1em;
+        @media screen and (max-width: 768px) {
+            margin: 0 0.5em;
+        }
+    }
+
+    @include hover-focus {
+        @include link($zen-palette-2);
+    }
+}
+
 .zen-btn-primary {
     @include solid-button($zen-palette-1, $white, $zen-palette-2, $white);
 }

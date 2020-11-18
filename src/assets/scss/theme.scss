@@ -7,9 +7,20 @@
     }
 }
 
+.col-12 {
+    @media screen and (max-width: 768px) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
 .mat-tab-group.mat-primary .mat-ink-bar,
 .mat-tab-nav-bar.mat-primary .mat-ink-bar {
     background-color: $zen-palette-1;
+}
+
+.mat-card {
+    border-radius: 0 !important;
 }
 
 .mat-elevation-z4 {
@@ -17,4 +28,8 @@
         0px 2px 2px -1px rgba(0, 0, 0, 0.1), 
         0px 2px 2px 0px rgba(0, 0, 0, 0.1),
         0px 1px 2px 0px rgba(0, 0, 0, 0.1);
+}
+
+.mat-tooltip {
+    font-size: smaller !important;
 }

@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { RouteMatcherService } from '../shared/services/route-matcher.service';
 
 @Component({
   selector: 'zen-lounge',
@@ -7,9 +8,14 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class LoungeComponent implements OnInit, OnDestroy {
 
-  constructor() { }
+  public _loungePage: boolean; 
+
+  constructor(
+    private routeMatcher: RouteMatcherService
+  ) { }
 
   ngOnInit(): void {
+    this._loungePage = this.routeMatcher.endsWith("lounge");
   }
 
   ngAfterViewInit() {
