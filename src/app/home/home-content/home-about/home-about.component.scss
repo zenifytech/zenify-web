@@ -10,6 +10,6 @@
     @include page-padding;
 }
 
-.zen-home-about-row:nth-child(odd) {
+.zen-home-about-row:last-child {
     background: $off-white;
 }
