@@ -1,4 +1,5 @@
 export enum QueryEventType {
+    SEND_MESSAGE = "send_message",
     DOMAIN_CHECK = "user_domain_check",
     SIGNUP_PROPRIETOR = "signup_proprietor",
     SIGNUP_ASSOCIATE = "signup_associate",

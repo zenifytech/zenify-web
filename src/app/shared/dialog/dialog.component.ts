@@ -43,7 +43,8 @@ export class DialogComponent implements OnInit {
             data: {
               header: this.getResultHeader(event.type, event.status),
               message: this.getResultMessage(event.type, event.status)
-            }
+            },
+            panelClass: 'zen-result-dialog'
           });
         }
       });
@@ -55,6 +56,9 @@ export class DialogComponent implements OnInit {
       case QueryEventType.SIGNUP_PROPRIETOR: {
         return (status === QueryEventStatus.COMPLETED) ? Messages.RESULT_HEADER_SIGNUP_SUCCESS : Messages.RESULT_HEADER_SIGNUP_ERROR;
       }
+      case QueryEventType.SEND_MESSAGE: {
+        return (status === QueryEventStatus.COMPLETED) ? Messages.RESULT_HEADER_SEND_INBOX_SUCCESS : Messages.RESULT_HEADER_SEND_INBOX_ERROR;
+      }
     }
   }
 
@@ -63,6 +67,9 @@ export class DialogComponent implements OnInit {
       case QueryEventType.SIGNUP_ASSOCIATE:
       case QueryEventType.SIGNUP_PROPRIETOR: {
         return (status === QueryEventStatus.COMPLETED) ? Messages.RESULT_MESSAGE_SIGNUP_SUCCESS : Messages.RESULT_MESSAGE_SIGNUP_ERROR;
+      }
+      case QueryEventType.SEND_MESSAGE: {
+        return (status === QueryEventStatus.COMPLETED) ? Messages.RESULT_MESSAGE_SEND_INBOX_SUCCESS : Messages.RESULT_MESSAGE_ERROR;
       }
       default: {
         if (status === QueryEventStatus.ERROR) {

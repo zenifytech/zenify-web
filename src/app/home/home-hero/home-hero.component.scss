@@ -24,25 +24,3 @@
     color: #555555;
     margin-top: 1rem;
 }
-
-.zen-hero-vector {
-    animation: fade-in-right .75s ease-in;
-}
-
-button.zen-auth-option {
-    width: 100%;
-    padding: 0.75rem;
-    margin-top: 1.5rem;
-}
-
-.zen-auth-option-right {
-    animation: fade-in-right .5s ease-in;
-}
-
-.zen-auth-option-left {
-    animation: fade-in-left .5s ease-in;
-}
-
-.zen-account-features {
-    padding: $zen-hero-subcontent-padding;
-}

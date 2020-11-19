@@ -11,14 +11,16 @@ export class HomeHeroComponent implements OnInit {
   public _mobileView: boolean;
   public _homePage: boolean;
   public _aboutPage: boolean;
+  public _contactPage: boolean;
 
   constructor(
-    private routeMatcher: RouteMatcherService
+    private routeMatcher: RouteMatcherService,
   ) { }
 
   ngOnInit(): void {
     this._mobileView = window.innerWidth <= 600;
     this._homePage = this.routeMatcher.homePage();
     this._aboutPage = this.routeMatcher.matches('about');
+    this._contactPage = this.routeMatcher.matches('contact');
   }
 }

@@ -21,6 +21,9 @@
 #zen-home-hero {
     grid-area: hero;
     @include page-padding;
+}
+
+.zen-home-page-hero {
     background: #e8faff;
 }
 

@@ -2,7 +2,7 @@
     <section id="zen-home-header">
         <zen-home-header></zen-home-header>
     </section>
-    <section id="zen-home-hero" *ngIf="_homePage">
+    <section id="zen-home-hero" [ngClass]="{'zen-home-page-hero': _homePage}">
         <zen-home-hero></zen-home-hero>
     </section>
     <section id="zen-home-content">

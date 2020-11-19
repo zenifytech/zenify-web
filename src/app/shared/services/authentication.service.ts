@@ -1,11 +1,10 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AccountRequest } from '../models/account-request';
 import { QueryEventService } from './query-event.service';
 import { environment } from 'src/environments/environment';
 import { QueryEventType } from '../enums/query-event-type.enum';
 import { QueryEventStatus } from '../enums/query-event-status.enum';
-import { Messages } from '../messages';
 import { catchError } from 'rxjs/operators';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { FirebaseService } from './firebase.service';

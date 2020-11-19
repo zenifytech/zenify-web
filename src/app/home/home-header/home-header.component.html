@@ -2,16 +2,17 @@
     <a href="#" routerLink="" tabindex="2"><img id="zen-header-logo" /></a>
     <div id="zen-header-menu" class="float-right">
         <section>
-            <a href="#" class="zen-header-menu text-uppercase" tabindex="2" routerLink="about">About</a>
+            <a href="#" class="zen-header-menu text-uppercase" tabindex="2" routerLink="/about">About</a>
             <a href="#" class="zen-header-menu text-uppercase" tabindex="2">Pricing</a>
-            <a href="#" class="zen-header-menu text-uppercase" tabindex="2">Contact</a>
+            <a href="#" class="zen-header-menu text-uppercase" tabindex="2" routerLink="/contact">Contact</a>
         </section>
 
         <div class="zen-header-menu-toggle">
             <button mat-icon-button [matMenuTriggerFor]="menu" class="ml-2"><mat-icon>menu</mat-icon></button>
             <mat-menu #menu="matMenu">
-                <button type="button" mat-menu-item routerLink="about">About</button>
+                <button type="button" mat-menu-item routerLink="/about">About</button>
                 <button type="button" mat-menu-item>Pricing</button>
+                <button type="button" mat-menu-item routerLink="/contact">Contact</button>
             </mat-menu>
         </div>
     </div>
