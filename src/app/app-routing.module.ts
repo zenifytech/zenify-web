@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeModule } from './home/home.module';
-import { LoungeModule } from './lounge/lounge.module';
 
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', loadChildren: () => HomeModule },
-  { path: 'lounge', loadChildren: () => LoungeModule }
+  { path: '', pathMatch: 'full', loadChildren: () => HomeModule }
 ];
 
 @NgModule({
