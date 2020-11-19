@@ -12,6 +12,8 @@ import { HomeHeroComponent } from './home-hero/home-hero.component';
 import { HomePartnersComponent } from './home-content/home-partners/home-partners.component';
 import { HomeAboutComponent } from './home-content/home-about/home-about.component';
 import { HomeContactComponent } from './home-hero/home-contact/home-contact.component';
+import { HomeAboutHeroComponent } from './home-hero/home-about-hero/home-about-hero.component';
+import { HomeFaqComponent } from './home-content/home-faq/home-faq.component';
 
 
 @NgModule({
@@ -24,7 +26,9 @@ import { HomeContactComponent } from './home-hero/home-contact/home-contact.comp
     HomeHeroComponent,
     HomePartnersComponent,
     HomeAboutComponent,
-    HomeContactComponent
+    HomeContactComponent,
+    HomeAboutHeroComponent,
+    HomeFaqComponent
   ],
   imports: [
     CommonModule,

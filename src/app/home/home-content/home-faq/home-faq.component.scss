@@ -1,0 +1,21 @@
+@import 'src/assets/scss/mixins.scss';
+
+.zen-section-title {
+    font-family: $zen-font-light;
+    text-align: center;
+    letter-spacing: $letter-spacing-s;
+}
+
+.zen-home-faq-panel {
+    box-shadow: none !important;
+    background: transparent !important;
+}
+
+.zen-home-faq-panel mat-expansion-panel-header {
+    font-family: $zen-font-regular !important;
+}
+
+.zen-home-faq-panel p {
+    font-family: $zen-font-regular !important;
+    color: $dark-grey !important;
+}

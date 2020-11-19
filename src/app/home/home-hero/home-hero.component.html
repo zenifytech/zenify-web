@@ -7,6 +7,9 @@
             <section *ngIf="_homePage">
                 <ng-container *ngTemplateOutlet="homePageHero"></ng-container>
             </section>
+            <section *ngIf="_aboutPage">
+                <ng-container *ngTemplateOutlet="aboutPageHero"></ng-container>
+            </section>
             <section *ngIf="_contactPage">
                 <ng-container *ngTemplateOutlet="contactPageHero"></ng-container>
             </section>
@@ -19,12 +22,15 @@
 <ng-template #homePageHero>
     <h1 class="pt-4">Do more, work less.</h1>
     <p class="zen-content">
-        Too much work at hand? Let us help simplify your every day processes by providing software solutions so you can do more and achieve more.
+        Too much work at hand? Let us help simplify your every day processes by providing you software solutions so you can do more and achieve more.
     </p>
     <p class="zen-content">Contact us today to get a FREE quotation!</p>
     <div class="d-inline-block mt-4">
-        <button type="button" class="btn zen-btn-primary zen-btn-header mr-2" tabindex="1">Get Started</button>
+        <button type="button" class="btn zen-btn-primary zen-btn-header mr-2" tabindex="1" routerLink="/contact">Get Started</button>
     </div>
+</ng-template>
+<ng-template #aboutPageHero>
+    <zen-home-about-hero></zen-home-about-hero>
 </ng-template>
 <ng-template #contactPageHero>
     <zen-home-contact></zen-home-contact>
