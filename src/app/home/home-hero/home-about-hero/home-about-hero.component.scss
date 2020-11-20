@@ -1,9 +1,15 @@
 @import 'src/assets/scss/mixins.scss';
 
-.zen-section-title {
-    font-family: $zen-font-light;
-    text-align: center;
-    letter-spacing: $letter-spacing-s;
+h1, p {
+    @media only screen and (max-width: 600px) {
+        text-align: center;
+    }
+}
+
+h1 {
+    @media only screen and (max-width: 600px) {
+        margin-top: 2.5rem;
+    }
 }
 
 img {
