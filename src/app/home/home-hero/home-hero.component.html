@@ -10,13 +10,16 @@
             <section *ngIf="_aboutPage">
                 <ng-container *ngTemplateOutlet="aboutPageHero"></ng-container>
             </section>
+            <section *ngIf="_pricingPage">
+                <ng-container *ngTemplateOutlet="pricingPageHero"></ng-container>
+            </section>
             <section *ngIf="_contactPage">
                 <ng-container *ngTemplateOutlet="contactPageHero"></ng-container>
             </section>
         </div>
     </div>
     <div class="col-12 col-md-6" *ngIf="!_mobileView && _homePage">
-        <object type="image/svg+xml" data="assets/images/svg/zenify-hero.svg"></object>
+        <object type="image/svg+xml" data="assets/images/svg/zenify-hero.svg" @slide-right></object>
     </div>
 </section>
 <ng-template #homePageHero>
@@ -26,11 +29,14 @@
     </p>
     <p class="zen-content">Contact us today to get a FREE quotation!</p>
     <div class="d-inline-block mt-4">
-        <button type="button" class="btn zen-btn-primary zen-btn-header mr-2" tabindex="1" routerLink="/contact">Get Started</button>
+        <button type="button" class="btn zen-btn-primary zen-btn-header mr-2" tabindex="1" routerLink="/contact">Get Quotation</button>
     </div>
 </ng-template>
 <ng-template #aboutPageHero>
     <zen-home-about-hero></zen-home-about-hero>
+</ng-template>
+<ng-template #pricingPageHero>
+    <zen-home-pricing-hero></zen-home-pricing-hero>
 </ng-template>
 <ng-template #contactPageHero>
     <zen-home-contact></zen-home-contact>

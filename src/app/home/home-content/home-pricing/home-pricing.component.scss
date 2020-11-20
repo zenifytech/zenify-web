@@ -1,0 +1,38 @@
+@import 'src/assets/scss/mixins.scss';
+
+.zen-home-pricing-row {
+    @include page-padding;
+    margin-top: -10rem;
+}
+
+.zen-home-pricing-backend {
+    @include page-padding;
+    background-color: $off-white;
+}
+
+.zen-section-title {
+    font-family: $zen-font-light;
+    letter-spacing: $letter-spacing-s;
+}
+
+.zen-pricing-card {
+    min-height: 40em;
+}
+
+.zen-home-pricing-description {
+    color: $dark-grey;
+}
+
+.zen-home-pricing-description mat-icon {
+    color: $zen-palette-2;
+}
+
+.zen-pricing-max-rate {
+    color: $dark-grey;
+    font-size: small;
+}
+
+.zen-home-pricing-inclusions {
+    @include position(absolute, auto, auto, 1.5rem, 2.5rem);
+    text-align: left;
+}

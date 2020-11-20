@@ -1,0 +1,58 @@
+<div class="zen-home-pricing-row row pb-4">
+    <div class="col-12 col-md-3" *ngFor="let tier of _pricingTiers">
+        <mat-card class="zen-pricing-card text-center">
+            <h5 class="zen-section-title zen-basic text-uppercase mb-4 pb-4">{{tier.name}}</h5>
+
+            <div>From</div>
+            <h2 class="zen-basic">{{tier.currency}} {{tier.minPrice | currency: ' ': 'symbol': '4.0'}}</h2>
+            <div class="zen-pricing-max-rate mb-4">
+                Up to {{tier.currency}} {{tier.maxPrice | currency: ' ': 'symbol': '4.0'}}
+            </div>
+
+            <div class="zen-home-pricing-description mt-2" *ngFor="let detail of tier.details">
+                {{detail}}
+            </div>
+            <div class="zen-home-pricing-inclusions">
+                <div class="mt-4">
+                    Inclusions
+                </div>
+                <div class="zen-home-pricing-description mt-2" *ngFor="let inclusion of tier.inclusions">
+                    <mat-icon>check</mat-icon> {{inclusion}}
+                </div>
+            </div>
+        </mat-card>
+    </div>
+</div>
+
+<div class="zen-home-pricing-backend mt-4">
+    <h3 class="zen-section-title zen-basic text-uppercase text-center mb-4 pb-4">Back-end Only</h3>
+    <div class="row pb-4">
+        <div class="col-12 col-md-4" *ngFor="let tier of _backEndTiers">
+            <mat-card class="zen-pricing-card text-center">
+                <h5 class="zen-section-title zen-basic text-uppercase mb-4 pb-4">{{tier.name}}</h5>
+    
+                <div>From</div>
+                <h2 class="zen-basic">{{tier.currency}} {{tier.minPrice | currency: ' ': 'symbol': '4.0'}}</h2>
+                <div class="zen-pricing-max-rate mb-4">
+                    Up to {{tier.currency}} {{tier.maxPrice | currency: ' ': 'symbol': '4.0'}}
+                </div>
+    
+                <div class="zen-home-pricing-description mt-2" *ngFor="let detail of tier.details">
+                    {{detail}}
+                </div>
+    
+                <div class="zen-home-pricing-inclusions">
+                    <div class="mt-4">
+                        Inclusions
+                    </div>
+                    <div class="zen-home-pricing-description mt-2" *ngFor="let inclusion of tier.inclusions">
+                        <mat-icon>check</mat-icon> {{inclusion}}
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
+<div class="mt-4 mb-4 pb-4 text-center">
+    <button type="button" class="btn zen-btn-primary p-3 text-uppercase" tabindex="1" routerLink="/contact">Request for an estimate</button>
+</div>

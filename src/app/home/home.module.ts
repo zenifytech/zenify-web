@@ -14,6 +14,8 @@ import { HomeAboutComponent } from './home-content/home-about/home-about.compone
 import { HomeContactComponent } from './home-hero/home-contact/home-contact.component';
 import { HomeAboutHeroComponent } from './home-hero/home-about-hero/home-about-hero.component';
 import { HomeFaqComponent } from './home-content/home-faq/home-faq.component';
+import { HomePricingHeroComponent } from './home-hero/home-pricing-hero/home-pricing-hero.component';
+import { HomePricingComponent } from './home-content/home-pricing/home-pricing.component';
 
 
 @NgModule({
@@ -28,7 +30,9 @@ import { HomeFaqComponent } from './home-content/home-faq/home-faq.component';
     HomeAboutComponent,
     HomeContactComponent,
     HomeAboutHeroComponent,
-    HomeFaqComponent
+    HomeFaqComponent,
+    HomePricingHeroComponent,
+    HomePricingComponent
   ],
   imports: [
     CommonModule,
