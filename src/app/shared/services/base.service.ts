@@ -23,6 +23,7 @@ export class BaseService {
 
   public sendMessage(message: InboxMessage) {
     const type = QueryEventType.SEND_MESSAGE;
+    this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.IN_PROGRESS});
 
     this.http.post(this._serviceUrl + '/base/v1/inbox/send-message', message)
       .pipe(catchError(this.handleErrors(type, [])))
