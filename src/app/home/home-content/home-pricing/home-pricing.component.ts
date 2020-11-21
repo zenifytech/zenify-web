@@ -21,7 +21,8 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year domain subscription",
         "1 year web hosting",
-        "1 year SSL certification"
+        "1 year SSL certificate",
+        "6 months cloud-server hosting"
       ]
     },
     {
@@ -39,7 +40,8 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year domain subscription",
         "1 year web hosting",
-        "1 year SSL certification"
+        "1 year SSL certificate",
+        "6 months cloud-server hosting"
       ]
     },
     {
@@ -56,7 +58,8 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year domain subscription",
         "1 year web hosting",
-        "1 year SSL certification"
+        "1 year SSL certificate",
+        "6 months cloud-server hosting"
       ]
     },
     {
@@ -73,7 +76,8 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year domain subscription",
         "1 year web hosting",
-        "1 year SSL certification"
+        "1 year SSL certificate",
+        "6 months cloud-server hosting"
       ]
     }
   ];
@@ -92,8 +96,8 @@ export class HomePricingComponent implements OnInit {
       ],
       inclusions: [
         "1 year API hosting",
-        "1 year SSL certification",
-        "2 months auto-scaling costs"
+        "1 year SSL certificate",
+        "2 months cloud-server hosting"
       ]
     },
     {
@@ -112,8 +116,8 @@ export class HomePricingComponent implements OnInit {
       ],
       inclusions: [
         "1 year API hosting",
-        "1 year SSL certification",
-        "3 months auto-scaling costs"
+        "1 year SSL certificate",
+        "3 months cloud-server hosting"
       ]
     },
     {
@@ -131,8 +135,8 @@ export class HomePricingComponent implements OnInit {
       ],
       inclusions: [
         "1 year API hosting",
-        "1 year SSL certification",
-        "3 months auto-scaling costs"
+        "1 year SSL certificate",
+        "3 months cloud-server hosting"
       ]
     }
   ]
