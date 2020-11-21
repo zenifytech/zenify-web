@@ -2,7 +2,7 @@
 
 .zen-home-pricing-row {
     @include page-padding;
-    margin-top: -10rem;
+    margin-top: -8rem;
 }
 
 .zen-home-pricing-backend {
@@ -33,6 +33,6 @@
 }
 
 .zen-home-pricing-inclusions {
-    @include position(absolute, auto, auto, 1.5rem, 2.5rem);
+    @include position(absolute, auto, auto, 1.5rem, 10%);
     text-align: left;
 }

@@ -1,4 +1,5 @@
 @import 'src/assets/scss/mixins.scss';
+@import '../home-hero.component.scss';
 
 h1, p {
     @media only screen and (max-width: 600px) {

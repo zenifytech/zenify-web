@@ -5,11 +5,39 @@
     width: 100%;
 }
 
+.zen-home-hero {
+    position: relative;
+    z-index: 2;
+}
+
+.zen-home-hero-base {
+    position: relative;
+    margin-top: -32rem;
+    margin-left: -4rem;
+    margin-right: -4.5rem;
+    z-index: 1;
+}
+
 .zen-hero-content {
-    margin-top: 5rem;
+    margin-top: 2.5rem;
     @media screen and (max-width: 600px) {
         text-align: center;
         margin-top: 0;
+    }
+}
+
+h1 {
+    @media screen and (min-width: 600px) {
+        color: #d0f0ff;
+    }
+}
+
+p {
+    font-family: $zen-font-regular;
+    margin-top: 1rem;
+    color: $dark-grey;
+    @media screen and (min-width: 600px) {
+        color: $off-white;
     }
 }
 
@@ -17,10 +45,4 @@
     @media screen and (max-width: 600px) {
         margin: 0.25rem 0;
     }
-}
-
-#zen-home-header-hero .zen-content {
-    font-family: $zen-font-regular;
-    color: #555555;
-    margin-top: 1rem;
 }

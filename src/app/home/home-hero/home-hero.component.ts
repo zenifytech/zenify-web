@@ -8,19 +8,37 @@ import { RouteMatcherService } from 'src/app/shared/services/route-matcher.servi
   styleUrls: ['./home-hero.component.scss'],
   animations: [
     trigger(
-      'slide-right', [
+      'slide-up', [
         transition(
           ':enter',  [
-            style({ 'position':'relative', right: '-5rem', opacity: 0 }),
-            animate('.75s ease-out', 
-                    style({ 'position':'relative', right: '0', opacity: 0.8 }))
+            style({ 'position':'relative', top: '-5rem', opacity: 0 }),
+            animate('1s ease-out', 
+                    style({ 'position':'relative', top: '0', opacity: 1 }))
           ]
         ),
         transition(
           ':leave',  [
-            style({ 'position': 'relative', right: '0', opacity: 0.8 }),
+            style({ 'position': 'relative', top: '0', opacity: 1 }),
             animate('.5s ease-in', 
-                    style({ 'position': 'relative', right: '-5rem', opacity: 0 }))
+                    style({ 'position': 'relative', top: '-5rem', opacity: 0 }))
+          ]
+        )
+      ]
+    ),
+    trigger(
+      'slide-down', [
+        transition(
+          ':enter',  [
+            style({ 'position':'relative', bottom: '-5rem', opacity: 0 }),
+            animate('1.25s ease-out', 
+                    style({ 'position':'relative', bottom: '0', opacity: 1 }))
+          ]
+        ),
+        transition(
+          ':leave',  [
+            style({ 'position': 'relative', bottom: '0', opacity: 1 }),
+            animate('.5s ease-in', 
+                    style({ 'position': 'relative', bottom: '-5rem', opacity: 0 }))
           ]
         )
       ]

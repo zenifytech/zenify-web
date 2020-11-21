@@ -4,13 +4,9 @@ div#zen-home-footer-container {
     min-height: 10em;
 }
 
-img.zen-footer-logo {
-    content: url('src/assets/images/logo/zenify-icon.webp');
-    min-width: 5em;
-    max-width: inherit;
-
+object {
     @media only screen and (max-width: 600px) {
-        width: 5em;
+        width: 5rem;
     }
 }
 

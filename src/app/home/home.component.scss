@@ -15,16 +15,11 @@
     grid-area: header;
     @include page-padding;
     width: 100%;
-    background: white;
 }
 
 #zen-home-hero {
     grid-area: hero;
     @include page-padding;
-}
-
-.zen-home-page-hero {
-    background: #e8faff;
 }
 
 #zen-home-header object {

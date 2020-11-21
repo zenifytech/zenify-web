@@ -22,6 +22,10 @@ button:focus {
     }
 }
 
+.zen-btn-title {
+    @include solid-button($zen-palette-2, $white, $zen-palette-1, $white);
+}
+
 .zen-btn-primary {
     @include solid-button($zen-palette-1, $white, $zen-palette-2, $white);
 }

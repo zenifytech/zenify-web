@@ -1,12 +1,12 @@
 @import 'src/assets/scss/mixins.scss';
 
 #zen-home-header-container {
+    @include flex-row;
     width: 100%;
 }
 
 img#zen-header-logo {
-    content: url('src/assets/images/logo/zenify-logo.webp');
-    position: absolute;
+    content: url('src/assets/images/logo/zenify-logo-white.webp');
     width: 15em;
     @media screen and (max-width: 600px) {
         width: 10.5em;
@@ -20,7 +20,7 @@ div#zen-header-menu section {
 }
 
 div#zen-header-menu .zen-header-menu-toggle {
-    color: $zen-palette-1;
+    color: $white;
     display: none;
     @media screen and (max-width: 600px) {
         display: block;
@@ -30,7 +30,7 @@ div#zen-header-menu .zen-header-menu-toggle {
 a.zen-header-menu,
 .zen-header-location {
     @include active {
-        @include link($dark-grey);
+        @include link($white);
         font-family: $zen-font-regular;
         letter-spacing: $letter-spacing-s;
         margin: 0 1em;
@@ -48,19 +48,6 @@ a.zen-header-menu,
 a.zen-header-menu {
     @include hover-focus {
         border-bottom: thin solid $zen-palette-2;
-    }
-}
-
-.zen-header-location {
-    @media screen and (min-width: 768px) {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-    }
-    @media screen and (max-width: 768px) {
-        mat-icon {
-            display: none;
-        }
     }
 }
 

@@ -10,3 +10,14 @@ a.zen-primary-link {
         border-bottom: thin solid $zen-palette-2;
     }
 }
+
+a.zen-link-white {
+    @include active {
+        @include link($white);
+    }
+
+    @include hover-focus {
+        @include link($zen-palette-2);
+        border-bottom: thin solid $zen-palette-2;
+    }
+}
