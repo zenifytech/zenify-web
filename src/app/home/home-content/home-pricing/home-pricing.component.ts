@@ -11,7 +11,7 @@ export class HomePricingComponent implements OnInit {
     {
       name: "Professional",
       minPrice: 3000,
-      maxPrice: 8500,
+      maxPrice: 9000,
       currency: "USD",
       details: [
         "Up to 5 web pages",
@@ -47,7 +47,7 @@ export class HomePricingComponent implements OnInit {
     {
       name: "Large-Scale",
       minPrice: 12000,
-      maxPrice: 23000,
+      maxPrice: 25000,
       currency: "USD",
       details: [
         "Up to 20 web pages",
@@ -64,8 +64,8 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Enterprise",
-      minPrice: 20000,
-      maxPrice: 40000,
+      minPrice: 25000,
+      maxPrice: 50000,
       currency: "USD",
       details: [
         "20++ web pages",
@@ -86,7 +86,7 @@ export class HomePricingComponent implements OnInit {
     {
       name: "Basic",
       minPrice: 2500,
-      maxPrice: 7000,
+      maxPrice: 8000,
       currency: "USD",
       details: [
         "Up to 2 microservices",
@@ -102,7 +102,7 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Advanced",
-      minPrice: 6000,
+      minPrice: 7000,
       maxPrice: 15000,
       currency: "USD",
       details: [
@@ -122,8 +122,8 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Professional",
-      minPrice: 10000,
-      maxPrice: 25000,
+      minPrice: 12000,
+      maxPrice: 30000,
       currency: "USD",
       details: [
         "Up to 10 microservices",
