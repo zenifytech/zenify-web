@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'zen-home-faq',
@@ -7,9 +7,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeFaqComponent implements OnInit {
 
+  public _scrollPosition: number;
+  public _faqLoaded: boolean;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  public loadFaqs() {
+    if (this._scrollPosition >= 2179) {
+      this._faqLoaded = true;
+    }
+    return this._faqLoaded;
+  }
+
+  @HostListener('window:scroll', ['$event']) 
+  private setScrollPosition(event) {
+    this._scrollPosition = window.pageYOffset;
+  }
 }

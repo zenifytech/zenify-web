@@ -7,6 +7,10 @@
     letter-spacing: $letter-spacing-s;
 }
 
+mat-accordion {
+    animation: 1.5s fade-in-right;
+}
+
 .zen-home-faq-panel {
     box-shadow: none !important;
     background: transparent !important;
