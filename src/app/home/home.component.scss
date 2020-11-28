@@ -1,6 +1,6 @@
 @import 'src/assets/scss/mixins.scss';
 
-#zen-home-page {
+#zen-page {
     min-height: 100vh;
     display: grid;
     grid-template-rows: auto 1fr auto;
@@ -11,12 +11,12 @@
         "footer";
 }
 
-#zen-home-header {
+#zen-header {
     grid-area: header;
     width: 100%;
 }
 
-#zen-home-header zen-home-header {
+#zen-header zen-home-header {
     @include position(fixed, 0, 0, auto, 0);
     @include page-padding;
     padding-top: .5rem;
@@ -30,12 +30,7 @@
     }
 }
 
-#zen-home-hero {
-    grid-area: hero;
-    @include page-padding;
-}
-
-#zen-home-header object {
+#zen-header object {
     position: absolute;
     left: 0;
     right: 0;
@@ -46,14 +41,19 @@
     }
 }
 
-#zen-home-content {
+#zen-hero {
+    grid-area: hero;
+    @include page-padding;
+}
+
+#zen-content {
     grid-area: content;
     @media screen and (max-width: 600px) {
         margin-top: 5rem;
     }
 }
 
-#zen-home-footer {
+#zen-footer {
     @include page-padding;
     grid-area: footer;
     background: $zen-palette-4;
