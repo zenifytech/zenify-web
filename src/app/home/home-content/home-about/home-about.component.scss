@@ -1,4 +1,5 @@
 @import 'src/assets/scss/mixins.scss';
+@import '../home-content.component.scss';
 
 .zen-section-title {
     font-family: $zen-font-light;
@@ -6,14 +7,6 @@
     letter-spacing: $letter-spacing-s;
 }
 
-.zen-home-about-row {
-    @include page-padding;
-}
-
 .zen-home-about-row:first-child {
     margin: 10rem 0;
-}
-
-.zen-home-about-row:last-child {
-    background: $off-white;
 }

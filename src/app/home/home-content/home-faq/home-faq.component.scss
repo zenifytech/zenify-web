@@ -1,4 +1,5 @@
 @import 'src/assets/scss/mixins.scss';
+@import '../home-content.component.scss';
 
 .zen-section-title {
     font-family: $zen-font-light;
@@ -18,4 +19,8 @@
 .zen-home-faq-panel p {
     font-family: $zen-font-regular !important;
     color: $dark-grey !important;
+}
+
+.zen-home-about-row {
+    background: $off-white;
 }
