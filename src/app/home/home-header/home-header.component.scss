@@ -6,10 +6,10 @@
 }
 
 img#zen-header-logo {
-    content: url('src/assets/images/logo/zenify-logo-white.webp');
-    width: 15em;
+    content: url('src/assets/images/logo/zenify-logo.webp');
+    width: 7.5em;
     @media screen and (max-width: 600px) {
-        width: 10.5em;
+        width: 6em;
     }
 }
 
@@ -20,7 +20,7 @@ div#zen-header-menu section {
 }
 
 div#zen-header-menu .zen-header-menu-toggle {
-    color: $white;
+    color: $dark-grey;
     display: none;
     @media screen and (max-width: 600px) {
         display: block;
@@ -30,8 +30,9 @@ div#zen-header-menu .zen-header-menu-toggle {
 a.zen-header-menu,
 .zen-header-location {
     @include active {
-        @include link($white);
+        @include link($dark-grey);
         font-family: $zen-font-regular;
+        font-weight: 600;
         letter-spacing: $letter-spacing-s;
         margin: 0 1em;
         padding-bottom: 0.25em;

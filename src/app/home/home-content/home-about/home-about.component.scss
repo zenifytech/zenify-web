@@ -10,6 +10,10 @@
     @include page-padding;
 }
 
+.zen-home-about-row:first-child {
+    margin: 10rem 0;
+}
+
 .zen-home-about-row:last-child {
     background: $off-white;
 }

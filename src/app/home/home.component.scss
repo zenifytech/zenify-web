@@ -13,8 +13,21 @@
 
 #zen-home-header {
     grid-area: header;
-    @include page-padding;
     width: 100%;
+}
+
+#zen-home-header zen-home-header {
+    @include position(fixed, 0, 0, auto, 0);
+    @include page-padding;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+    background: $white;
+    box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.035);
+    z-index: 999;
+    @media screen and (max-width: 600px) {
+        padding-bottom: .3rem;
+        box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.075);
+    }
 }
 
 #zen-home-hero {
@@ -28,11 +41,16 @@
     right: 0;
     top: 0;
     z-index: -1;
+    @media screen and (max-width: 600px) {
+        display: none;
+    }
 }
 
 #zen-home-content {
     grid-area: content;
-    margin-top: 5em;
+    @media screen and (max-width: 600px) {
+        margin-top: 5rem;
+    }
 }
 
 #zen-home-footer {
