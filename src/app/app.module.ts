@@ -6,10 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { HomeModule } from './home/home.module';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ZenifyHttpInterceptor } from './shared/http-interceptor';
-import { environment } from 'src/environments/environment';
-import { BusinessFireAuthFactory, CommunityFireAuthFactory } from './app-firebase-factory';
 
 @NgModule({
   declarations: [
@@ -21,27 +17,6 @@ import { BusinessFireAuthFactory, CommunityFireAuthFactory } from './app-firebas
     BrowserAnimationsModule,
     SharedModule,
     HomeModule
-  ],
-  providers: [
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: ZenifyHttpInterceptor,
-      multi: true
-    },
-    {
-      provide: 'env',
-      useValue: environment
-    },
-    {
-      provide: 'businessAuth',
-      deps: [PLATFORM_ID, NgZone],
-      useFactory: BusinessFireAuthFactory
-    },
-    {
-      provide: 'communityAuth',
-      deps: [PLATFORM_ID, NgZone],
-      useFactory: CommunityFireAuthFactory
-    }
   ],
   bootstrap: [AppComponent]
 })
