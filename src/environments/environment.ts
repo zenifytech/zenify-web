@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  serviceUrl: "http://localhost:8080/zenify-api"
+  serviceUrl: "http://localhost:8080/connect-api"
 };
 
 /*
