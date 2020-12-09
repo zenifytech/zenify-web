@@ -2,7 +2,7 @@
     <div class="col-12 col-md-6 pb-4">
         <h1 class="pt-4">Leave a message</h1>
         <p class="zen-content mb-4">
-            Let us know how we can help you, and we'll get back to you the soonest. You may also email us at <strong>info@zenify.tech</strong>.
+            Let us know how we can help you, and we'll get back to you the soonest. You may also email us at <strong>info@zenifysolutions.com</strong>.
         </p>
         <p>We can't wait to hear from you!</p>
     </div>
@@ -16,7 +16,7 @@
                 <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Email</mat-label>
                     <input matInput formControlName="email" autocomplete="off" tabindex="1" required>
-                    <mat-error *ngIf="hasError('email', 'pattern')">{{_messages.RESULT_MESSAGE_INVALID_EMAIL_ERROR}}</mat-error>
+                    <mat-error *ngIf="hasError('email', 'pattern')">{{_messages.FORM_EMAIL_FORMAT_ERROR}}</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill" class="w-100">
                     <mat-label>Subject</mat-label>
