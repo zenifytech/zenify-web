@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'zen-home-faq',
@@ -10,9 +11,16 @@ export class HomeFaqComponent implements OnInit {
   public _scrollPosition: number;
   public _faqLoaded: boolean;
 
-  constructor() { }
+  constructor(
+    private route: ActivatedRoute
+  ) { }
 
   ngOnInit(): void {
+    this.route.fragment.subscribe(fragment => {
+      if (fragment) {
+        this.scrollToElement(fragment);
+      }
+    });
   }
 
   public loadFaqs() {
@@ -25,5 +33,10 @@ export class HomeFaqComponent implements OnInit {
   @HostListener('window:scroll', ['$event']) 
   private setScrollPosition(event) {
     this._scrollPosition = window.pageYOffset;
+  }
+
+  private scrollToElement(id){
+    const element = document.getElementById(id);
+    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 }

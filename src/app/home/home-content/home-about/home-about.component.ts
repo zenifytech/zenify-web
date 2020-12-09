@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'zen-home-about',
@@ -8,20 +7,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeAboutComponent implements OnInit {
 
-  constructor(
-    private route: ActivatedRoute
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
-    this.route.fragment.subscribe(fragment => {
-      if (fragment) {
-        this.scrollToElement(fragment);
-      }
-    });
-  }
-
-  private scrollToElement(id){
-    const element = document.getElementById(id);
-    element.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
 }

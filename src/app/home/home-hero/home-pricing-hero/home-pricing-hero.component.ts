@@ -37,6 +37,6 @@ export class HomePricingHeroComponent implements OnInit {
   }
 
   public redirectToFAQ() {
-    this.router.navigate(['/about'], { fragment: 'zenify-faq' })
+    this.router.navigate(['/'], { fragment: 'zenify-faq' })
   }
 }
