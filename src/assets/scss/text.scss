@@ -1,5 +1,24 @@
 @import 'mixins.scss';
 
+body {
+    @media screen and (min-width: 2560px) {
+        font-size: 22px;
+    }
+
+    @media screen and (min-width: 3840px) {
+        font-size: 32px;
+    }
+}
+
+@media screen and (min-width: 3840px) {
+    h1 { font-size: 64px; }
+    h2 { font-size: 56px; }
+    h3 { font-size: 48px; }
+    h4 { font-size: 42px; }
+    h5 { font-size: 36px; }
+    h6 { font-size: 28px; }
+}
+
 .zen-text-dark-grey {
     color: $dark-grey;
 }

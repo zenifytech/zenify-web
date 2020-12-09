@@ -4,9 +4,10 @@
     @include page-padding;
     background: $off-white;
     text-align: center;
-    padding-bottom: 5rem;
+    padding-bottom: 5em;
+
     @media only screen and (max-width: 600px) {
-        padding-bottom: 5rem;
+        padding-bottom: 5em;
     }
 }
 
@@ -17,4 +18,8 @@
 
 #zen-partners img {
     max-width: 10em;
+
+    @media only screen and (min-width: 2560px) {
+        margin-bottom: 2.5em;
+    }
 }

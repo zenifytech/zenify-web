@@ -6,7 +6,7 @@ div#zen-home-footer-container {
 
 object {
     @media only screen and (max-width: 600px) {
-        width: 5rem;
+        width: 5em;
     }
 }
 
@@ -25,6 +25,15 @@ a.zen-footer-link {
         font-size: small;
         margin: 0 1em;
         padding-left: 0.5em;
+
+        @media screen and (min-width: 2560px) {
+            font-size: 20px;
+        }
+    
+        @media screen and (min-width: 3840px) {
+            font-size: 30px;
+        }
+
         @media screen and (max-width: 768px) {
             margin: 0 0.5em;
         }
@@ -55,11 +64,19 @@ a.zen-footer-link {
     color: $white;
     border-left: medium solid $zen-palette-2;
     padding-left: $zen-header-text-padding;
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
+
+    @media screen and (min-width: 2560px) {
+        font-size: 20px;
+    }
+
+    @media screen and (min-width: 3840px) {
+        font-size: 30px;
+    }
 
     @media only screen and (max-width: 600px) {
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 1em;
         border-left: none;
         padding-left: 0;
     }
@@ -70,8 +87,16 @@ a.zen-footer-link {
     font-size: small;
     color: #cccccc;
 
+    @media screen and (min-width: 2560px) {
+        font-size: 18px;
+    }
+
+    @media screen and (min-width: 3840px) {
+        font-size: 28px;
+    }
+
     @media only screen and (max-width: 600px) {
         text-align: center;
-        margin-top: 1rem;
+        margin-top: 1em;
     }
 }

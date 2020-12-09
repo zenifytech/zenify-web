@@ -3,6 +3,14 @@
 @mixin page-padding() {
     padding: $zen-page-padding;
 
+    @media only screen and (min-width: 2560px) {
+        padding: $zen-page-padding-2k;
+    }
+
+    @media only screen and (min-width: 3840px) {
+        padding: $zen-page-padding-4k;
+    }
+
     @media only screen and (max-width: 1024px) {
         padding: $zen-page-padding-mobile;
     }
@@ -91,6 +99,7 @@
     &:not([disabled]):hover,
     &:not([disabled]):focus {
       @content;
+      outline: none !important;
     }
 }
 

@@ -7,6 +7,10 @@
     letter-spacing: $letter-spacing-s;
 }
 
-.zen-home-about-row:first-child {
+.zen-home-about-row {
     margin: 10rem 0;
+
+    @media screen and (min-width: 2560px) {
+        margin: 20em 0 15em 0;
+    }
 }

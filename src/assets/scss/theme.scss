@@ -36,4 +36,53 @@
 
 .zen-result-dialog .mat-dialog-container {
     max-width: 450px !important;
-  }
+}
+
+.btn {
+    @media screen and (min-width: 2560px) {
+        font-size: 22px !important;
+        padding: 1.15rem 2rem !important;
+    }
+
+    @media screen and (min-width: 3840px) {
+        font-size: 32px !important;
+        padding: 1.5rem 2.5rem !important;
+    }
+}
+
+.mat-expansion-panel-header {
+    @media screen and (min-width: 3840px) {
+        padding: 1.75rem 1rem !important;
+    }
+}
+
+.mat-expansion-panel-content {
+    @media screen and (min-width: 3840px) {
+        padding: 1rem .5rem !important;
+    }
+}
+
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-content {
+    @media screen and (min-width: 2560px) {
+        font-size: 22px !important;
+        line-height: 1.25;
+    }
+    
+    @media screen and (min-width: 3840px) {
+        font-size: 30px !important;
+        line-height: 1.25;
+    }
+}
+
+.form-control {
+    @media screen and (min-width: 2560px) {
+        font-size: 22px !important;
+        height: calc(1.5em + 1rem + 2px);
+    }
+
+    @media screen and (min-width: 3840px) {
+        font-size: 30px !important;
+        height: calc(1.5em + 1rem + 2px);
+    }
+}
