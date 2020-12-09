@@ -1,5 +1,9 @@
 @import 'mixins.scss';
 
+a:focus {
+    outline: none !important;
+}
+
 a.zen-primary-link {
     @include active {
         @include link($zen-palette-1);
