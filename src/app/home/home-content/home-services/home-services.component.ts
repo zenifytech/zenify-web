@@ -60,7 +60,7 @@ export class HomeServicesComponent implements OnInit {
     } else if (this._screenWidth <= 1024 && this._screenWidth >= 768) {
       return position - 100;
     } else if (this._screenWidth < 600) {
-      return position + 300;
+      return position + 200;
     }
 
     return position;
