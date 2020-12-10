@@ -40,7 +40,7 @@ export class HomeServicesComponent implements OnInit {
     this._screenWidth = window.innerWidth;
     this._mobileView = this._screenWidth <= 600;
 
-    if (this._screenWidth >= 2560) {
+    if (this._screenWidth >= 2560 || (this._screenWidth <= 1024 && this._screenWidth >= 768)) {
       this._svgLoaded[0] = true;
     }
   }
@@ -57,6 +57,10 @@ export class HomeServicesComponent implements OnInit {
       return position + 100;
     } else if (this._screenWidth >= 2560) {
       return position - 100;
+    } else if (this._screenWidth <= 1024 && this._screenWidth >= 768) {
+      return position - 100;
+    } else if (this._screenWidth < 600) {
+      return position + 300;
     }
 
     return position;
@@ -64,6 +68,7 @@ export class HomeServicesComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) 
   private setScrollPosition(event) {
+    console.log("scroll", this._scrollPosition);
     this._scrollPosition = window.pageYOffset;
   }
 }

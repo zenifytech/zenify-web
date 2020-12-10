@@ -16,8 +16,11 @@
 
 .zen-service-name {
     font-family: $zen-font-light;
-    padding-top: 3em;
     margin-bottom: 1em;
+
+    @media screen and (max-width: 768px) {
+        padding-top: 0;
+    }
 }
 
 object {
@@ -26,7 +29,12 @@ object {
 
 .zen-service-info {
     padding: 4em;
-    @media screen and (max-width: 600px) {
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 0;
+    }
+    
+    @media screen and (max-width: 768px) {
         padding: 1em;
     }
 }

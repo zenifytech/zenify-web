@@ -1,5 +1,5 @@
 <div class="zen-home-pricing-row row pb-4">
-    <div class="col-12 col-md-3" *ngFor="let tier of _pricingTiers">
+    <div class="col-12 col-md-3 mb-4" *ngFor="let tier of _pricingTiers">
         <mat-card class="zen-pricing-card text-center">
             <h5 class="zen-section-title zen-basic text-uppercase mb-4 pb-4">{{tier.name}}</h5>
 
@@ -27,7 +27,7 @@
 <div class="zen-home-pricing-backend mt-4">
     <h3 class="zen-section-title zen-basic text-uppercase text-center mb-4 pb-4">Back-end Only</h3>
     <div class="row pb-4">
-        <div class="col-12 col-md-4" *ngFor="let tier of _backEndTiers">
+        <div class="col-12 col-md-4 mb-4" *ngFor="let tier of _backEndTiers">
             <mat-card class="zen-pricing-card text-center">
                 <h5 class="zen-section-title zen-basic text-uppercase mb-4 pb-4">{{tier.name}}</h5>
     
