@@ -93,10 +93,26 @@ a.zen-footer-link {
 
     @media screen and (min-width: 3840px) {
         font-size: 28px;
+
+        mat-icon {
+            font-size: 28px !important;
+            vertical-align: sub !important;
+            margin-left: 1em;
+            margin-right: .5em !important;
+        }
     }
 
     @media only screen and (max-width: 600px) {
         text-align: center;
         margin-top: 1em;
+
+        mat-icon {
+            vertical-align: text-bottom;
+        }
+    }
+
+    mat-icon {
+        font-size: medium;
+        vertical-align: middle;
     }
 }

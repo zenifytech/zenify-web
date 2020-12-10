@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'zen-home-footer',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeFooterComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   public currentYear() {
     return new Date().getFullYear();
+  }
+
+  public redirectToFAQ() {
+    this.router.navigate(['/'], { fragment: 'faq' })
   }
 }

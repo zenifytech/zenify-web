@@ -1,6 +1,6 @@
-<div id="zen-home-footer container">
+<div id="zen-home-footer-container">
     <div class="row pt-3">
-        <div class="col-12 col-sm-4">
+        <div class="col-12 col-md-4">
             <div class="row">
                 <div class="col-12 col-md-4 text-center">
                     <object type="image/svg+xml" data="assets/images/svg/zenify-icon.svg" alt="Zenify Software Solutions"></object>
@@ -11,20 +11,27 @@
                 </div>
             </div>
         </div>
-        <div class="zen-home-footer-links col-12 col-sm-4">
+        <div class="col-12 col-md-4 zen-home-footer-links">
             <div>
-                <a href="" class="zen-footer-link mr-2" tabindex="2">Terms of Service</a>
+                <a href="" class="zen-footer-link mr-2" tabindex="2" routerLink="/about">About Zenify</a>
             </div>
             <div>
-                <a href="" class="zen-footer-link mr-2" tabindex="2">Privacy</a>
+                <a href="" class="zen-footer-link mr-2" tabindex="2" routerLink="/">Our Services</a>
+            </div>
+            <div>
+                <a href="" class="zen-footer-link mr-2" tabindex="2" [routerLink]="" (click)="redirectToFAQ()">FAQ</a>
+            </div>
+            <div>
+                <a href="" class="zen-footer-link mr-2" tabindex="2" routerLink="/pricing">Pricing</a>
             </div>
         </div>
-        <div class="zen-home-footer-links col-12-col-sm-4 text-center">
-            <div class="zen-footer-text mb-4">
-                Receive news of our latest products and promos
+        <div class="col-12 col-md-4 zen-home-footer-links">
+            <div>
+                <a href="" class="zen-footer-link mr-2" tabindex="2" routerLink="/contact">Leave a message</a>
             </div>
-            <input type="text" class="form-control" placeholder="your email" tabindex="2" />
-            <button type="button" class="btn zen-btn-outline-solid-white mt-2 w-100" tabindex="2">Subscribe to newsletter</button>
+            <div class="zen-footer-text mt-1 pl-4">
+                <mat-icon class="material-icons-outlined">email</mat-icon>info@zenifysolutions.com
+            </div>
         </div>
     </div>
 </div>
