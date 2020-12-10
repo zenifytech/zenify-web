@@ -9,7 +9,7 @@ export class HomePricingComponent implements OnInit {
 
   public _pricingTiers = [
     {
-      name: "Professional",
+      name: "Startup",
       minPrice: 3000,
       maxPrice: 9000,
       currency: "USD",
@@ -19,7 +19,7 @@ export class HomePricingComponent implements OnInit {
         "Company profile page",
       ],
       inclusions: [
-        "1 year domain subscription",
+        "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
         "6 months cloud-server hosting"
@@ -38,16 +38,16 @@ export class HomePricingComponent implements OnInit {
         "Third-party API integrations"
       ],
       inclusions: [
-        "1 year domain subscription",
+        "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
         "6 months cloud-server hosting"
       ]
     },
     {
-      name: "Large-Scale",
-      minPrice: 12000,
-      maxPrice: 25000,
+      name: "Professional",
+      minPrice: 15000,
+      maxPrice: 35000,
       currency: "USD",
       details: [
         "Up to 20 web pages",
@@ -56,7 +56,7 @@ export class HomePricingComponent implements OnInit {
         "Large-scale e-Commerce"
       ],
       inclusions: [
-        "1 year domain subscription",
+        "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
         "6 months cloud-server hosting"
@@ -64,8 +64,8 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Enterprise",
-      minPrice: 25000,
-      maxPrice: 50000,
+      minPrice: 30000,
+      maxPrice: 60000,
       currency: "USD",
       details: [
         "20++ web pages",
@@ -74,7 +74,7 @@ export class HomePricingComponent implements OnInit {
         "Full-featured applications"
       ],
       inclusions: [
-        "1 year domain subscription",
+        "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
         "6 months cloud-server hosting"
@@ -95,7 +95,7 @@ export class HomePricingComponent implements OnInit {
         "Basic data queries"
       ],
       inclusions: [
-        "1 year API hosting",
+        "1 year hosting",
         "1 year SSL certificate",
         "2 months cloud-server hosting"
       ]
@@ -115,7 +115,7 @@ export class HomePricingComponent implements OnInit {
         "Third-party API integrations"
       ],
       inclusions: [
-        "1 year API hosting",
+        "1 year hosting",
         "1 year SSL certificate",
         "3 months cloud-server hosting"
       ]
@@ -123,7 +123,7 @@ export class HomePricingComponent implements OnInit {
     {
       name: "Professional",
       minPrice: 12000,
-      maxPrice: 30000,
+      maxPrice: 40000,
       currency: "USD",
       details: [
         "Up to 10 microservices",
@@ -134,7 +134,7 @@ export class HomePricingComponent implements OnInit {
         "Optimizing resources for existing applications"
       ],
       inclusions: [
-        "1 year API hosting",
+        "1 year hosting",
         "1 year SSL certificate",
         "3 months cloud-server hosting"
       ]
