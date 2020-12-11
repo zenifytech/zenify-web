@@ -13,4 +13,22 @@
     @media screen and (min-width: 2560px) {
         margin: 20em 0 15em 0;
     }
+
+    @media screen and (max-width: 600px) {
+        margin: 1em;
+    }
+}
+
+img {
+    @include object(cover, center);
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5));
+    width: 15em;
+    height: 15em;
+    margin: 2.5em 0;
+    border-radius: 100%;
+
+    @media screen and (max-width: 600px) {
+        width: 15em;
+        height: 15em;
+    }
 }
