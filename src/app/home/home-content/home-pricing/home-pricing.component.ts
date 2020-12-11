@@ -19,10 +19,12 @@ export class HomePricingComponent implements OnInit {
         "Company profile page",
       ],
       inclusions: [
+        "Business API",
+        "Business email",
         "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
-        "6 months cloud-server hosting"
+        "6 months API server hosting"
       ]
     },
     {
@@ -38,10 +40,12 @@ export class HomePricingComponent implements OnInit {
         "Third-party API integrations"
       ],
       inclusions: [
+        "Business API",
+        "Business email",
         "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
-        "6 months cloud-server hosting"
+        "6 months API server hosting"
       ]
     },
     {
@@ -56,10 +60,12 @@ export class HomePricingComponent implements OnInit {
         "Large-scale e-Commerce"
       ],
       inclusions: [
+        "Business API",
+        "Business email",
         "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
-        "6 months cloud-server hosting"
+        "6 months API server hosting"
       ]
     },
     {
@@ -74,10 +80,12 @@ export class HomePricingComponent implements OnInit {
         "Full-featured applications"
       ],
       inclusions: [
+        "Business API",
+        "Business email",
         "1 year domain",
         "1 year web hosting",
         "1 year SSL certificate",
-        "6 months cloud-server hosting"
+        "6 months API server hosting"
       ]
     }
   ];

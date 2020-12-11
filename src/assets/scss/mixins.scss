@@ -11,7 +11,7 @@
         padding: $zen-page-padding-4k;
     }
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 1024px) {
         padding: $zen-page-padding-mobile;
     }
 }
@@ -27,7 +27,7 @@
 @mixin lounge-padding() {
     padding: $zen-lounge-page-padding;
 
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 900px) {
         padding: $zen-page-padding-mobile;
     }
 }

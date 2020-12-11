@@ -16,10 +16,23 @@
 }
 
 .zen-pricing-card {
-    min-height: 40em;
+    min-height: 45em;
+    margin: .25em;
+
+    @media only screen and (max-width: 1366px) {
+        min-height: 50em;
+    }
 
     @media only screen and (max-width: 1024px) {
-        min-height: 55em;
+        min-height: 50em;
+    }
+
+    @media only screen and (max-width: 768px) {
+        min-height: 60em;
+    }
+
+    @media only screen and (max-width: 600px) {
+        min-height: 45em;
     }
 }
 
@@ -37,6 +50,9 @@
 }
 
 .zen-home-pricing-inclusions {
-    @include position(absolute, auto, auto, 1.5rem, 10%);
+    @include position(absolute, auto, auto, 0, 0);
     text-align: left;
+    background: $off-white-0;
+    width: 100%;
+    padding: 1.25em;
 }
