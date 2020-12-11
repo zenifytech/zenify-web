@@ -21,6 +21,15 @@ export class BaseService {
     this._serviceUrl = environment.serviceUrl;
   }
 
+  public ping() {
+    this.http.get(this._serviceUrl + '/base/version')
+    .subscribe((result: any) => {
+      if (result) {
+        console.debug("Established connection successfully", result.value);
+      }
+    });
+  }
+
   public sendMessage(message: InboxMessage) {
     const type = QueryEventType.SEND_MESSAGE;
     this.queryEventService.notifyEvent({type: type, status: QueryEventStatus.IN_PROGRESS});

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  serviceUrl: "https://zenifysolutionsapis.herokuapp.com/connect-api"
+  serviceUrl: "https://zenify-apis.herokuapp.com/connect-api"
 };
