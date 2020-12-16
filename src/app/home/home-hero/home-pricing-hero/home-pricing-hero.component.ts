@@ -1,5 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 @Component({
@@ -30,10 +31,12 @@ import { Router } from '@angular/router';
 export class HomePricingHeroComponent implements OnInit {
 
   constructor(
+    private titleService: Title,
     private router: Router
   ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Pricing | Zenify Software Solutions, Co.");
   }
 
   public redirectToFAQ() {

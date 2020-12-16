@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Title } from '@angular/platform-browser';
 import { UntilDestroy, untilDestroyed } from '@ngneat/until-destroy';
 import { QueryEventStatus } from 'src/app/shared/enums/query-event-status.enum';
 import { QueryEventType } from 'src/app/shared/enums/query-event-type.enum';
@@ -23,12 +24,14 @@ export class HomeContactComponent implements OnInit {
   constructor(
     private baseService: BaseService,
     private queryEventService: QueryEventService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
     this.subscribeToQueryEvents();
     this.initializeForm();
+    this.titleService.setTitle("Contact Us | Zenify Software Solutions, Co.");
   }
 
   public hasError(formControlName: string, error: string) {
