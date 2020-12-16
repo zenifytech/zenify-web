@@ -10,8 +10,8 @@ export class HomePricingComponent implements OnInit {
   public _pricingTiers = [
     {
       name: "Startup",
-      minPrice: 3000,
-      maxPrice: 9000,
+      minPrice: 2000,
+      maxPrice: 8000,
       currency: "USD",
       details: [
         "Up to 5 web pages",
@@ -29,7 +29,7 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Commercial",
-      minPrice: 8000,
+      minPrice: 6000,
       maxPrice: 15000,
       currency: "USD",
       details: [
@@ -50,11 +50,11 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Professional",
-      minPrice: 15000,
-      maxPrice: 35000,
+      minPrice: 12000,
+      maxPrice: 25000,
       currency: "USD",
       details: [
-        "Up to 20 web pages",
+        "Up to 30 web pages",
         "Organization management",
         "Company asset management",
         "Large-scale e-Commerce"
@@ -70,11 +70,11 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Enterprise",
-      minPrice: 30000,
-      maxPrice: 60000,
+      minPrice: 25000,
+      maxPrice: 50000,
       currency: "USD",
       details: [
-        "20++ web pages",
+        "30++ web pages",
         "Complex data management",
         "Complex algorithms",
         "Full-featured applications"
@@ -93,8 +93,8 @@ export class HomePricingComponent implements OnInit {
   public _backEndTiers = [
     {
       name: "Basic",
-      minPrice: 2500,
-      maxPrice: 8000,
+      minPrice: 1500,
+      maxPrice: 7000,
       currency: "USD",
       details: [
         "Up to 2 microservices",
@@ -110,7 +110,7 @@ export class HomePricingComponent implements OnInit {
     },
     {
       name: "Advanced",
-      minPrice: 7000,
+      minPrice: 6000,
       maxPrice: 15000,
       currency: "USD",
       details: [
