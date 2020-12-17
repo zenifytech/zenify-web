@@ -1,5 +1,6 @@
 import { trigger, transition, style, animate } from '@angular/animations';
-import { Component, HostListener, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 
 @Component({
   selector: 'zen-home-services',
@@ -34,10 +35,14 @@ export class HomeServicesComponent implements OnInit {
   private _svgLoaded = [false, false, false, false, false];
   private _screenWidth: number;
 
-  constructor() { }
+  constructor(
+    @Inject(PLATFORM_ID) private platform: Object
+  ) { }
 
   ngOnInit(): void {
-    this._screenWidth = window.innerWidth;
+    if (isPlatformBrowser(this.platform)) {
+      this._screenWidth = window.innerWidth;
+    }
     this._mobileView = this._screenWidth <= 600;
 
     if (this._screenWidth >= 2560 || (this._screenWidth <= 1024 && this._screenWidth >= 768)) {
@@ -68,7 +73,8 @@ export class HomeServicesComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) 
   private setScrollPosition(event) {
-    console.log("scroll", this._scrollPosition);
-    this._scrollPosition = window.pageYOffset;
+    if (isPlatformBrowser(this.platform)) {
+      this._scrollPosition = window.pageYOffset;
+    }
   }
 }

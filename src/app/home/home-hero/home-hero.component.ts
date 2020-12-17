@@ -1,5 +1,7 @@
 import { trigger, transition, style, animate } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { RouteMatcherService } from 'src/app/shared/services/route-matcher.service';
 
 @Component({
@@ -55,13 +57,18 @@ export class HomeHeroComponent implements OnInit {
 
   constructor(
     private routeMatcher: RouteMatcherService,
+    @Inject(PLATFORM_ID) private platform: Object,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
-    this._mobileView = window.innerWidth <= 600;
+    if (isPlatformBrowser(this.platform)) {
+      this._mobileView = window.innerWidth <= 600;
+    }
     this._homePage = this.routeMatcher.homePage();
     this._aboutPage = this.routeMatcher.matches('about');
     this._pricingPage = this.routeMatcher.matches('pricing');
     this._contactPage = this.routeMatcher.matches('contact');
+    this.titleService.setTitle("Zenify Software Solutions | Software development made affordable")
   }
 }

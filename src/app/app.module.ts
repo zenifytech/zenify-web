@@ -13,7 +13,7 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
