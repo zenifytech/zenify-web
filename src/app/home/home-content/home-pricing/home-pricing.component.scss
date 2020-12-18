@@ -2,12 +2,33 @@
 
 .zen-home-pricing-row {
     @include page-padding;
+}
+
+.zen-home-pricing-row:nth-child(1) {
     margin-top: -3.5em;
 }
 
-.zen-home-pricing-backend {
-    @include page-padding;
-    background-color: $off-white;
+mat-card-header {
+    background: $zen-palette-1;
+    color: $white;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    padding: .25em 0;
+    text-align: left;
+}
+
+.zen-icon-container {
+    background: $zen-palette-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    width:fit-content;
+    margin: 0 auto;
+}
+
+td mat-icon {
+    color: $white;
 }
 
 .zen-section-title {
@@ -15,44 +36,14 @@
     letter-spacing: $letter-spacing-s;
 }
 
-.zen-pricing-card {
-    min-height: 47em;
-    margin: .25em;
-
-    @media only screen and (max-width: 1366px) {
-        min-height: 52em;
-    }
-
-    @media only screen and (max-width: 1024px) {
-        min-height: 50em;
-    }
-
-    @media only screen and (max-width: 768px) {
-        min-height: 62.5em;
-    }
-
-    @media only screen and (max-width: 600px) {
-        min-height: 47em;
-    }
-}
-
-.zen-home-pricing-description {
-    color: $dark-grey;
-}
-
-.zen-home-pricing-description mat-icon {
-    color: $zen-palette-2;
-}
-
 .zen-pricing-max-rate {
     color: $dark-grey;
     font-size: small;
 }
 
-.zen-home-pricing-inclusions {
-    @include position(absolute, auto, auto, 0, 0);
-    text-align: left;
-    background: $off-white-0;
-    width: 100%;
-    padding: 1.25em;
+.zen-pricing-subtext {
+    font-size: small;
+    font-style: italic;
+    color: $light-grey;
+    text-align: center;
 }

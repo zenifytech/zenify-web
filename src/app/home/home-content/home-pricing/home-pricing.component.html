@@ -1,58 +1,281 @@
-<div class="zen-home-pricing-row row pb-4">
-    <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-4" *ngFor="let tier of _pricingTiers">
-        <mat-card class="zen-pricing-card text-center">
-            <h5 class="zen-section-title zen-basic text-uppercase mb-4 pb-4">{{tier.name}}</h5>
+<div class="zen-home-pricing-row pb-4">
+    <h2 class="zen-basic text-uppercase text-center mb-4 pb-4">Web Development</h2>
 
-            <div>From</div>
-            <h2 class="zen-basic">{{tier.currency}} {{tier.minPrice | currency: ' ': 'symbol': '4.0'}}</h2>
+    <div class="row">
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-4 text-center" *ngFor="let tier of _pricingTiers">
+            <h6 class="zen-section-title zen-basic text-uppercase mb-4">{{tier.name}}</h6>
+            <div>As low as</div>
+            <h3 class="zen-basic">{{tier.currency}} {{tier.minPrice | currency: ' ': 'symbol': '4.0'}}</h3>
             <div class="zen-pricing-max-rate mb-4">
                 Up to {{tier.currency}} {{tier.maxPrice | currency: ' ': 'symbol': '4.0'}}
             </div>
-
-            <div class="zen-home-pricing-description mt-2" *ngFor="let detail of tier.details">
-                {{detail}}
-            </div>
-            <div class="zen-home-pricing-inclusions">
-                <div class="mt-4">
-                    Inclusions
-                </div>
-                <div class="zen-home-pricing-description mt-2" *ngFor="let inclusion of tier.inclusions">
-                    <mat-icon>check</mat-icon> {{inclusion}}
-                </div>
-            </div>
-        </mat-card>
-    </div>
-</div>
-
-<div class="zen-home-pricing-backend mt-4">
-    <h3 class="zen-section-title zen-basic text-uppercase text-center mb-4 pb-4">API Only</h3>
-    <div class="row pb-4">
-        <div class="col-12 col-sm-4 col-md-4 col-lg-4 mb-4" *ngFor="let tier of _backEndTiers">
-            <mat-card class="zen-pricing-card text-center">
-                <h5 class="zen-section-title zen-basic text-uppercase mb-4 pb-4">{{tier.name}}</h5>
-    
-                <div>From</div>
-                <h2 class="zen-basic">{{tier.currency}} {{tier.minPrice | currency: ' ': 'symbol': '4.0'}}</h2>
-                <div class="zen-pricing-max-rate mb-4">
-                    Up to {{tier.currency}} {{tier.maxPrice | currency: ' ': 'symbol': '4.0'}}
-                </div>
-    
-                <div class="zen-home-pricing-description mt-2" *ngFor="let detail of tier.details">
-                    {{detail}}
-                </div>
-    
-                <div class="zen-home-pricing-inclusions">
-                    <div class="mt-4">
-                        Inclusions
-                    </div>
-                    <div class="zen-home-pricing-description mt-2" *ngFor="let inclusion of tier.inclusions">
-                        <mat-icon>check</mat-icon> {{inclusion}}
-                    </div>
-                </div>
-            </mat-card>
         </div>
     </div>
 </div>
+
+<div class="zen-home-pricing-row pb-4">
+    <h5>Scope</h5>
+    <div class="example-container">
+        <table mat-table [dataSource]="_tierDescriptions" class="w-100">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="startup">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[0].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.startup !== true else checked" class="text-center">
+                    <span *ngIf="element.startup !== false">{{element.startup}}</span>
+                </div>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="commercial">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[1].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.commercial !== true else checked" class="text-center">
+                    <span *ngIf="element.commercial !== false">{{element.commercial}}</span>
+                </div>
+            </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="professional">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[2].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.professional !== true else checked" class="text-center">
+                    <span *ngIf="element.professional !== false">{{element.professional}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enterprise">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[3].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.enterprise !== true else checked" class="text-center">
+                    <span *ngIf="element.enterprise !== false">{{element.enterprise}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-template #checked>
+              <div class="zen-icon-container">
+                <mat-icon>check</mat-icon>
+              </div>
+          </ng-template>
+      
+          <tr mat-header-row *matHeaderRowDef="_columns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: _columns;"></tr>
+        </table>
+    </div>
+</div>
+
+<div class="zen-home-pricing-row pb-4">
+    <h5>Inclusions</h5>
+    <div class="example-container">
+        <table mat-table [dataSource]="_tierInclusions" class="w-100">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="startup">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[0].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.startup !== true else checked" class="text-center">
+                    <span *ngIf="element.startup !== false">{{element.startup}}</span>
+                </div>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="commercial">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[1].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.commercial !== true else checked" class="text-center">
+                    <span *ngIf="element.commercial !== false">{{element.commercial}}</span>
+                </div>
+            </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="professional">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[2].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.professional !== true else checked" class="text-center">
+                    <span *ngIf="element.professional !== false">{{element.professional}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enterprise">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_pricingTiers[3].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.enterprise !== true else checked" class="text-center">
+                    <span *ngIf="element.enterprise !== false">{{element.enterprise}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-template #checked>
+              <div class="zen-icon-container">
+                <mat-icon>check</mat-icon>
+              </div>
+          </ng-template>
+      
+          <tr mat-header-row *matHeaderRowDef="_columns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: _columns;"></tr>
+        </table>
+    </div>
+</div>
+
+<div class="zen-home-pricing-row mt-4 pb-4">
+    <h2 class="zen-basic text-uppercase text-center mb-4 pb-4">Standalone API</h2>
+
+    <div class="row">
+        <div class="col-12 col-sm-3 col-md-3 col-lg-3 mb-4 text-center" *ngFor="let tier of _backEndTiers">
+            <h6 class="zen-section-title zen-basic text-uppercase mb-4">{{tier.name}}</h6>
+            <div>As low as</div>
+            <h3 class="zen-basic">{{tier.currency}} {{tier.minPrice | currency: ' ': 'symbol': '4.0'}}</h3>
+            <div class="zen-pricing-max-rate mb-4">
+                Up to {{tier.currency}} {{tier.maxPrice | currency: ' ': 'symbol': '4.0'}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="zen-home-pricing-row pb-4">
+    <h5>Scope</h5>
+    <div class="example-container">
+        <table mat-table [dataSource]="_apiTierDescriptions" class="w-100">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="basic">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_backEndTiers[0].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.basic !== true else checked" class="text-center">
+                    <span *ngIf="element.basic !== false">{{element.basic}}</span>
+                </div>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="advanced">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_backEndTiers[1].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.advanced !== true else checked" class="text-center">
+                    <span *ngIf="element.advanced !== false">{{element.advanced}}</span>
+                </div>
+            </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="professional">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_backEndTiers[2].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.professional !== true else checked" class="text-center">
+                    <span *ngIf="element.professional !== false">{{element.professional}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enterprise">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">{{_backEndTiers[3].name}}</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.enterprise !== true else checked" class="text-center">
+                    <span *ngIf="element.enterprise !== false">{{element.enterprise}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-template #checked>
+              <div class="zen-icon-container">
+                <mat-icon>check</mat-icon>
+              </div>
+          </ng-template>
+      
+          <tr mat-header-row *matHeaderRowDef="_apicolumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: _apicolumns;"></tr>
+        </table>
+    </div>
+</div>
+
+<div class="zen-home-pricing-row pb-4">
+    <h5>Inclusions</h5>
+    <div class="example-container">
+        <table mat-table [dataSource]="_apiTierInclusions" class="w-100">
+      
+          <!-- Position Column -->
+          <ng-container matColumnDef="description">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+          </ng-container>
+      
+          <!-- Name Column -->
+          <ng-container matColumnDef="basic">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">Basic</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.basic !== true else checked" class="text-center">
+                    <span *ngIf="element.basic !== false">{{element.basic}}</span>
+                </div>
+          </ng-container>
+      
+          <!-- Weight Column -->
+          <ng-container matColumnDef="advanced">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">Advanced</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.advanced !== true else checked" class="text-center">
+                    <span *ngIf="element.advanced !== false">{{element.advanced}}</span>
+                </div>
+            </td>
+          </ng-container>
+      
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="professional">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">Professional</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.professional !== true else checked" class="text-center">
+                    <span *ngIf="element.professional !== false">{{element.professional}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-container matColumnDef="enterprise">
+            <th mat-header-cell *matHeaderCellDef  class="text-center">Enterprise</th>
+            <td mat-cell *matCellDef="let element">
+                <div *ngIf="element.enterprise !== true else checked" class="text-center">
+                    <span *ngIf="element.enterprise !== false">{{element.enterprise}}</span>
+                </div>
+            </td>
+          </ng-container>
+
+          <ng-template #checked>
+              <div class="zen-icon-container">
+                <mat-icon>check</mat-icon>
+              </div>
+          </ng-template>
+      
+          <tr mat-header-row *matHeaderRowDef="_apicolumns; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: _apicolumns;"></tr>
+        </table>
+    </div>
+</div>
+
+<div class="zen-pricing-subtext">
+    Above rates are project-based and do not apply on recurring or long-term engagements i.e. maintenance. Feel free to contact us to setup a meeting or request for an estimate. 
+</div>
+
 <div class="mt-4 mb-4 pb-4 text-center">
     <button type="button" class="btn zen-btn-primary p-3 text-uppercase" tabindex="1" routerLink="/contact">Request for an estimate</button>
 </div>

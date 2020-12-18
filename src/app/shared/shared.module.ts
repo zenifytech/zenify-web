@@ -9,6 +9,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
+import { MatTableModule } from '@angular/material/table';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { ResultDialogComponent } from './dialog/result-dialog/result-dialog.component';
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatDialogModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   exports: [
     HttpClientModule,
@@ -51,7 +53,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatSelectModule,
     MatDialogModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
 
 })
