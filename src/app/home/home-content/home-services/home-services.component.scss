@@ -1,5 +1,32 @@
 @import 'src/assets/scss/mixins.scss';
 
+section {
+    width: 100%;
+    height: 35em;
+    overflow: hidden;
+    margin-top: 2em;
+    @media screen and (min-width: 3840px) {
+        height: 30em;
+    }
+
+    @media screen and (min-width: 2560px) {
+        min-height: 25em;
+    }
+
+    @media screen and (max-width: 600px) {
+        height: 45em;
+    }
+}
+
+div.scrollable-container {
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    padding-right: 17px;
+    padding-bottom: 5em;
+    box-sizing: content-box;
+}
+
 .zen-section-title {
     font-family: $zen-font-light;
     text-align: center;
@@ -8,6 +35,15 @@
 
 .zen-home-service-row {
     @include page-padding;
+    position: relative;
+    min-height: 25em;
+    @media screen and (min-width: 3840px) {
+        min-height: 15em;
+    }
+
+    @media screen and (min-width: 2560px) {
+        min-height: 15em;
+    }
 }
 
 .zen-home-service {

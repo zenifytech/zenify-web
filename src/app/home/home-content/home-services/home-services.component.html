@@ -1,66 +1,100 @@
+<h2 class="zen-section-title zen-basic text-uppercase">Why Zenify?</h2>
 <section>
-    <h2 class="zen-section-title zen-basic text-uppercase">Why Zenify?</h2>
-    <div class="zen-home-service-row mt-4 pt-4">
-        <div class="zen-home-service row">
-            <div class="zen-home-service-icon col-12 col-md-4 pt-4">
-                <object type="image/svg+xml" data="assets/images/svg/zenify-client-interaction.svg" alt="Software developer shaking hands with a client" *ngIf="loadedOnce(0, 200)" @pop-up></object>
-            </div>
-            <div class="col-12 col-md-2"></div>
-            <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-center': _mobileView}">
-                <h3 class="zen-service-name zen-basic">We don't just build, we relate</h3>
-                <p class="mb-4">
-                    We won't simply just build applications as you ask us to. While we understand that nobody could truly value your processes as much as you do, we at Zenify, will analyze and try to understand as much of your processes as possible so we can provide you tailor-fitted solutions and suggestions to help further improve your business.
-                </p>
-            </aside>
-        </div>
-    </div>
-    <div class="zen-home-service-row mt-4 pt-4">
-        <div class="zen-home-service row">
-            <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
-                <object type="image/svg+xml" data="assets/images/svg/zenify-client-satisfaction.svg" alt="Software developer grabbing on to an arrow pointing upwards" *ngIf="loadedOnce(1, 600)" @pop-up></object>
-            </div>
-            <div class="col-12 col-md-2" *ngIf="_mobileView"></div>
-            <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-right': !_mobileView, 'text-center': _mobileView}">
-                <h3 class="zen-service-name zen-basic">Client satisfcation is our topmost priority</h3>
-                <p class="mb-4">
-                    While we also offer you inputs and ideas on how to build and design your processes, we value more what could satisfy you. We will keep you in touch and in the loop when making decisions as we build your application.
-                </p>
-            </aside>
-            <div class="col-12 col-md-2" *ngIf="!_mobileView"></div>
-            <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
-                <object type="image/svg+xml" data="assets/images/svg/zenify-client-satisfaction.svg" alt="Software developer grabbing on to an arrow pointing upwards" *ngIf="loadedOnce(1, 600)" @pop-up></object>
+    <div class="scrollable-container">
+        <div class="zen-home-service-row mt-4 pt-4">
+            <div class="zen-home-service row" *ngIf="showFirst() || isAtPosition(0, 1)" @pop-up-right>
+                <div class="zen-home-service-icon col-12 col-md-4 pt-4">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-client-interaction.svg" alt="Software developer shaking hands with a client"></object>
+                </div>
+                <div class="col-12 col-md-2"></div>
+                <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-center': _mobileView}">
+                    <h3 class="zen-service-name zen-basic">{{_services[0].header}}</h3>
+                    <p class="mb-4">
+                        {{_services[0].content}}
+                    </p>
+                </aside>
             </div>
         </div>
-    </div>
-    <div class="zen-home-service-row mt-4 pt-4">
-        <div class="zen-home-service row">
-            <div class="zen-home-service-icon col-12 col-md-4">
-                <object type="image/svg+xml" data="assets/images/svg/zenify-team.svg" alt="Software developers huddle to help find solutions" *ngIf="loadedOnce(2, 1300)" @pop-up></object>
+        <div class="zen-home-service-row mt-4 pt-4">
+            <div class="zen-home-service row" *ngIf="isAtPosition(400, 2)" @pop-up-left>
+                <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-client-satisfaction.svg" alt="Software developer grabbing on to an arrow pointing upwards"></object>
+                </div>
+                <div class="col-12 col-md-2" *ngIf="_mobileView"></div>
+                <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-right': !_mobileView, 'text-center': _mobileView}">
+                    <h3 class="zen-service-name zen-basic">{{_services[1].header}}</h3>
+                    <p class="mb-4">
+                        {{_services[1].content}}
+                    </p>
+                </aside>
+                <div class="col-12 col-md-2" *ngIf="!_mobileView"></div>
+                <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-client-satisfaction.svg" alt="Software developer grabbing on to an arrow pointing upwards"></object>
+                </div>
             </div>
-            <div class="col-12 col-md-2"></div>
-            <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-center': _mobileView}">
-                <h3 class="zen-service-name zen-basic">We deliver what you need and more</h3>
-                <p class="mb-4">
-                    Our well-organized team is here to make sure nothing gets left out. From official meetings to casual talks, we want to get to know you and your business so that we won't fall short of what you need from us.
-                </p>
-            </aside>
         </div>
-    </div>
-    <div class="zen-home-service-row mt-4 pt-4">
-        <div class="zen-home-service row">
-            <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
-                <object type="image/svg+xml" data="assets/images/svg/zenify-location.svg" alt="Software development in the Philippines" *ngIf="loadedOnce(3, 1723)" @pop-up></object>
+        <div class="zen-home-service-row mt-4 pt-4">
+            <div class="zen-home-service row" *ngIf="isAtPosition(900, 3)" @pop-up-right>
+                <div class="zen-home-service-icon col-12 col-md-4">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-team.svg" alt="Software developers huddle to help find solutions"></object>
+                </div>
+                <div class="col-12 col-md-2"></div>
+                <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-center': _mobileView}">
+                    <h3 class="zen-service-name zen-basic">{{_services[2].header}}</h3>
+                    <p class="mb-4">
+                        {{_services[2].content}}
+                    </p>
+                </aside>
             </div>
-            <div class="col-12 col-md-2" *ngIf="_mobileView"></div>
-            <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-right': !_mobileView, 'text-center': _mobileView}">
-                <h3 class="zen-service-name zen-basic">Affordable software</h3>
-                <p class="mb-4">
-                    One of the primary considerations that affect software development costs is the location. Our team is operating in the Philippines, so we can guarantee you affordable rates without compromising in quality.
-                </p>
-            </aside>
-            <div class="col-12 col-md-2" *ngIf="!_mobileView"></div>
-            <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
-                <object type="image/svg+xml" data="assets/images/svg/zenify-location.svg" alt="Software development in the Philippines" *ngIf="loadedOnce(3, 1723)" @pop-up></object>
+        </div>
+        <div class="zen-home-service-row mt-4 pt-4">
+            <div class="zen-home-service row" *ngIf="isAtPosition(1300, 4)" @pop-up-left>
+                <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-location.svg" alt="Software development in the Philippines"></object>
+                </div>
+                <div class="col-12 col-md-2" *ngIf="_mobileView"></div>
+                <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-right': !_mobileView, 'text-center': _mobileView}">
+                    <h3 class="zen-service-name zen-basic">{{_services[3].header}}</h3>
+                    <p class="mb-4">
+                        {{_services[3].content}}
+                    </p>
+                </aside>
+                <div class="col-12 col-md-2" *ngIf="!_mobileView"></div>
+                <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-location.svg" alt="Software development in the Philippines"></object>
+                </div>
+            </div>
+        </div>
+        <div class="zen-home-service-row mt-4 pt-4">
+            <div class="zen-home-service row" *ngIf="isAtPosition(1800, 5)" @pop-up-right>
+                <div class="zen-home-service-icon col-12 col-md-4">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-promotion.svg" alt="Software developers stepping up in their career"></object>
+                </div>
+                <div class="col-12 col-md-2"></div>
+                <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-center': _mobileView}">
+                    <h3 class="zen-service-name zen-basic">{{_services[4].header}}</h3>
+                    <p class="mb-4">
+                        {{_services[4].content}}
+                    </p>
+                </aside>
+            </div>
+        </div>
+        <div class="zen-home-service-row mt-4 pt-4">
+            <div class="zen-home-service row" *ngIf="isAtPosition(2300, 6)" @pop-up-left>
+                <div class="zen-home-service-icon col-12 col-md-4" *ngIf="_mobileView">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-web-development.svg" alt="Full cycle of web development"></object>
+                </div>
+                <div class="col-12 col-md-2" *ngIf="_mobileView"></div>
+                <aside class="col-12 col-md-6 zen-service-info" [ngClass]="{'text-right': !_mobileView, 'text-center': _mobileView}">
+                    <h3 class="zen-service-name zen-basic">{{_services[5].header}}</h3>
+                    <p class="mb-4">
+                        {{_services[5].content}}
+                    </p>
+                </aside>
+                <div class="col-12 col-md-2" *ngIf="!_mobileView"></div>
+                <div class="zen-home-service-icon col-12 col-md-4" *ngIf="!_mobileView">
+                    <object type="image/svg+xml" data="assets/images/svg/zenify-web-development.svg" alt="Full cycle of web development"></object>
+                </div>
             </div>
         </div>
     </div>
