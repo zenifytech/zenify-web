@@ -24,9 +24,8 @@ export class HomePricingComponent implements OnInit {
         "1 year SSL certificate",
         "6 months API server hosting",
         "Business emails",
-        "SEO Optimization",
-        "Cloudflare DDOS Protection",
-        "Cloudflare CDN"
+        "SEO",
+        "DDOS Protection",
       ]
     },
     {
@@ -47,9 +46,8 @@ export class HomePricingComponent implements OnInit {
         "1 year SSL certificate",
         "6 months API server hosting",
         "Business emails",
-        "SEO Optimization",
-        "Cloudflare DDOS Protection",
-        "Cloudflare CDN"
+        "SEO",
+        "DDOS Protection"
       ]
     },
     {
@@ -69,9 +67,8 @@ export class HomePricingComponent implements OnInit {
         "1 year SSL certificate",
         "6 months API server hosting",
         "Business emails",
-        "SEO Optimization",
-        "Cloudflare DDOS Protection",
-        "Cloudflare CDN"
+        "SEO",
+        "DDOS Protection",
       ]
     },
     {
@@ -91,9 +88,8 @@ export class HomePricingComponent implements OnInit {
         "1 year SSL certificate",
         "6 months API server hosting",
         "Business emails",
-        "SEO Optimization",
-        "Cloudflare DDOS Protection",
-        "Cloudflare CDN"
+        "SEO",
+        "DDOS Protection",
       ]
     }
   ];
@@ -101,7 +97,7 @@ export class HomePricingComponent implements OnInit {
   public _backEndTiers = [
     {
       name: "Basic",
-      minPrice: 1500,
+      minPrice: 2000,
       maxPrice: 7000,
       currency: "USD",
       details: [
@@ -113,7 +109,8 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year hosting",
         "1 year SSL certificate",
-        "2 months cloud-server hosting"
+        "2 months cloud-server hosting",
+        "DDOS Protection"
       ]
     },
     {
@@ -133,12 +130,13 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year hosting",
         "1 year SSL certificate",
-        "3 months cloud-server hosting"
+        "3 months cloud-server hosting",
+        "DDOS Protection"
       ]
     },
     {
       name: "Professional",
-      minPrice: 12000,
+      minPrice: 15000,
       maxPrice: 40000,
       currency: "USD",
       details: [
@@ -152,7 +150,8 @@ export class HomePricingComponent implements OnInit {
       inclusions: [
         "1 year hosting",
         "1 year SSL certificate",
-        "3 months cloud-server hosting"
+        "3 months cloud-server hosting",
+        "DDOS Protection"
       ]
     }
   ]
