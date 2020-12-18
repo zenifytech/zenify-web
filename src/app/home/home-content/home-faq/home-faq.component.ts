@@ -1,4 +1,5 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Component, HostListener, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -12,7 +13,8 @@ export class HomeFaqComponent implements OnInit {
   public _faqLoaded: boolean;
 
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    @Inject(PLATFORM_ID) private platform: Object
   ) { }
 
   ngOnInit(): void {
@@ -24,7 +26,7 @@ export class HomeFaqComponent implements OnInit {
   }
 
   public loadFaqs() {
-    if (this._scrollPosition >= 2179) {
+    if (this._scrollPosition >= 550) {
       this._faqLoaded = true;
     }
     return this._faqLoaded;
@@ -32,7 +34,9 @@ export class HomeFaqComponent implements OnInit {
 
   @HostListener('window:scroll', ['$event']) 
   private setScrollPosition(event) {
-    this._scrollPosition = window.pageYOffset;
+    if (isPlatformBrowser(this.platform)) {
+      this._scrollPosition = window.pageYOffset;
+    }
   }
 
   private scrollToElement(id){

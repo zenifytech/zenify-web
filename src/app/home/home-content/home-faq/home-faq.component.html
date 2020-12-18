@@ -1,6 +1,6 @@
 <section id="faq" class="zen-home-about-row">
     <div class="mt-4 mb-4">
-        <h3 class="zen-section-title zen-basic text-uppercase mb-4">Frequently Asked Questions</h3>
+        <h3 class="zen-section-title zen-basic text-uppercase" [ngClass]="{'zen-faq-empty': !loadFaqs(), 'mb-4': loadFaqs()}">Frequently Asked Questions</h3>
         <mat-accordion *ngIf="loadFaqs()">
             <mat-expansion-panel class="zen-home-faq-panel" hideToggle>
                 <mat-expansion-panel-header>
