@@ -54,8 +54,14 @@
         margin-right: -4.5em;
     }
 
+    @media screen and (max-width: 1366px) {
+        margin-top: -20em;
+        margin-left: -2em;
+        margin-right: -2.5em;
+    }
+
     @media screen and (max-width: 1024px) {
-        margin-top: -15em;
+        margin-top: -21.5em;
         margin-left: -2em;
         margin-right: -2.5em;
     }

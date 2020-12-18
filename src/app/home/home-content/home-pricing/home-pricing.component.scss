@@ -16,11 +16,11 @@
 }
 
 .zen-pricing-card {
-    min-height: 45em;
+    min-height: 47em;
     margin: .25em;
 
     @media only screen and (max-width: 1366px) {
-        min-height: 50em;
+        min-height: 52em;
     }
 
     @media only screen and (max-width: 1024px) {
@@ -28,11 +28,11 @@
     }
 
     @media only screen and (max-width: 768px) {
-        min-height: 60em;
+        min-height: 62.5em;
     }
 
     @media only screen and (max-width: 600px) {
-        min-height: 45em;
+        min-height: 47em;
     }
 }
 
