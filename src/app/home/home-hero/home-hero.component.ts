@@ -69,6 +69,6 @@ export class HomeHeroComponent implements OnInit {
     this._aboutPage = this.routeMatcher.matches('about');
     this._pricingPage = this.routeMatcher.matches('pricing');
     this._contactPage = this.routeMatcher.matches('contact');
-    this.titleService.setTitle("Zenify Software Solutions | Software development made affordable")
+    this.titleService.setTitle("Zenify Software Solutions | Software development made affordable");
   }
 }
