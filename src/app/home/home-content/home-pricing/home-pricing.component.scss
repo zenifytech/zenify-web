@@ -17,6 +17,25 @@ mat-card-header {
     text-align: left;
 }
 
+.zen-rate-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-radius: 100%;
+    width:fit-content;
+    margin: 0 auto;
+    padding: 3em 1.75em;
+
+    h2 {
+        color: $zen-palette-1;
+    }
+
+    label {
+        color: $dark-grey;
+    }
+}
+
 .zen-icon-container {
     background: $zen-palette-2;
     display: flex;
@@ -27,17 +46,17 @@ mat-card-header {
     margin: 0 auto;
 }
 
+td {
+    padding: .25em !important;
+}
+
 td mat-icon {
     color: $white;
 }
 
-.zen-section-title {
-    font-family: $zen-font-light;
-    letter-spacing: $letter-spacing-s;
-}
-
-.zen-pricing-max-rate {
-    color: $dark-grey;
+.zen-pricing-caption {
+    color: $light-grey;
+    font-style: italic;
     font-size: small;
 }
 
